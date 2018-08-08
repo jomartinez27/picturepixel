@@ -9,3 +9,42 @@
 //   border: 1px solid #fff;
 //   background-color: #00f;
 // }
+
+.session-form-container {
+  border: 1px solid #000;
+  margin: auto;
+  width: 400px;
+  padding: 10px;
+  height: 531px;
+}
+
+.login-header {
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.signup-header {
+  display: flex;
+  justify-content: center;
+}
+
+.session-form-box {
+  padding: 20px;
+  margin-left: 20px;
+}
+
+.session-form-container p {
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  width: 316px;
+  height: 40px;
+  color: #FFF;
+  background-color: #34bf49;
+}
+
+.session-form-container p:hover {
+  cursor: pointer;
+}

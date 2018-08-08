@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Redirect, HashRouter } from 'react-router-dom';
+import { Route, Redirect, HashRouter, Link } from 'react-router-dom';
 
 import GreetingContainer from './greeting/greeting_container';
 import LogInFormContainer from './sessionForm/login_form_container';
@@ -9,8 +9,8 @@ import { AuthRoute } from '../util/route_util';
 const App = () => (
   <div>
     <header className="banner">
-      PicturePx
-      <GreetingContainer className="greeting"/>
+      <Link style={{textDecoration: 'none'}} className="logo-banner" to="/">PicturePx</Link>
+      <GreetingContainer />
     </header>
 
     <AuthRoute exact path="/login" component={LogInFormContainer} />

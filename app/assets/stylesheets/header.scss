@@ -1,13 +1,42 @@
 .banner {
   display: flex;
   background-color: yellow;
+  justify-content: space-between;
   height: 50px;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.logo-header {
-  display: block;
-  float: left;
+.logo-banner {
+  display: flex;
+  align-items: center;
   padding: 5px;
+  margin: 10px;
+  color: #e6e6e6;
+  font-size: 20px;
+}
+
+.logo-banner:hover {
+  color: #0099e5;
+}
+
+.header-button {
+  border-radius: 8px;
+  color: #FFF;
+  background-color: #0099e5;
+  border: none;
+  text-align: center;
+  font-size: 16px;
+  padding: 15px;
+  width: 140px;
+  cursor: pointer;
+  transition: all 0.5s;
   margin: 5px;
+}
+
+.account-required {
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

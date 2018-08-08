@@ -6,19 +6,19 @@ const Greeting = ({ currentUser, logout }) => {
   const sessionLinks = () => (
     <nav className="login-signup">
       <Link to='/login'>Log In</Link>
-      &nbsp;
+      <br />
       <Link to='/signup'>Sign up</Link>
     </nav>
   )
 
   const personalGreeting = () => (
-    <hgroup className="header-group">
-      <h2 className="header-name">Welcome back, {currentUser.username}!</h2>
-      <button className="header-button" onClick={logout}>Log Out</button>
-    </hgroup>
+    [
+      <h2 key={currentUser.id} className="header-name">Welcome back, {currentUser.username}!</h2>,
+      <button key={currentUser.id + 1} className="header-button" onClick={logout}>Log out</button>
+    ]
   );
 
-  return currentUser ? personalGreeting() : null;
+  return currentUser ? personalGreeting() : sessionLinks();
 }
 
 export default Greeting;

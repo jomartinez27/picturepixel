@@ -1,4 +1,8 @@
 {
+  "engines": {
+    "node": "8.9.4",
+    "npm": "6.2.0"
+  },
   "name": "five_hundred_px_clone",
   "private": true,
   "dependencies": {
@@ -25,7 +29,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --watch --mode=development"
+    "start": "webpack --watch --mode=development",
+    "postinstall": "webpack"
   },
   "repository": {
     "type": "git",
