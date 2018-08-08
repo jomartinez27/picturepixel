@@ -1,18 +1,20 @@
 import React from 'react';
+import { Route, Redirect, HashRouter } from 'react-router-dom';
+
 import GreetingContainer from './greeting/greeting_container';
-import { Route } from 'react-router-dom';
-import LoginFormContainer from './sessionForm/login_form_container';
-import SignupFormContainer from './sessionForm/signup_form_container';
+import LogInFormContainer from './sessionForm/login_form_container';
+import SignUpFormContainer from './sessionForm/signup_form_container';
+import { AuthRoute } from '../util/route_util';
 
 const App = () => (
   <div>
     <header>
       <h3>Picture Px</h3>
       <GreetingContainer />
-
-    <Route path="/login" component={LoginFormContainer} />
-    <Route path="/signup" component={SignupFormContainer} />
     </header>
+
+    <AuthRoute exact path="/login" component={LogInFormContainer} />
+    <AuthRoute exact path="/signup" component={SignUpFormContainer} />
   </div>
 );
 

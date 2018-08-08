@@ -24,6 +24,7 @@ class SessionForm extends React.Component {
     if (this.props.formType === 'signup') {
       return (
         <label>Email:
+          &nbsp;
           <input
             type="text"
             value={this.state.email}
@@ -45,14 +46,14 @@ class SessionForm extends React.Component {
       return (
         <div>
           <header className="signup-header">Join PicturePx</header>
-          <Link to="/login">Have an account? Log In</Link>
+          <h5>Have an account?</h5><Link to="/login">Log In</Link>
         </div>
       )
     } else {
       return (
         <div>
           <header className="login-header">Log In to PicturePx</header>
-          <Link to="/signup">Don't have an account? Create one!</Link>
+          <h5>Don't have an account?</h5><Link to="/signup">Create Account</Link>
         </div>
       )
     }
@@ -80,6 +81,7 @@ class SessionForm extends React.Component {
         {this.renderErrors()}
 
         <label>Username:
+          &nbsp;
           <input
             type="text"
             value={this.state.username}
@@ -90,6 +92,7 @@ class SessionForm extends React.Component {
         {this.emailForm()}
         &nbsp;
         <label>Password:
+          &nbsp;
           <input
             type="password"
             value={this.state.password}
