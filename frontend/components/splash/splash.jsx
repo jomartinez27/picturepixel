@@ -1,35 +1,30 @@
 import React from 'react'
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import SplashImage from '../splash_image';
 
-class Splash extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  banner() {
-    if (this.props.currentUser) {
-      return (
-        <div>
-          <img src={window.image}/>
-          <header className="splash-banner">
-            <Link style={{textDecoration: 'none'}} className="logo-banner" to="/">PicturePx</Link>
-          </header>
-        </div>
-      )
-    } else {
-      return (
-        <Redirect to="/login" />
-      )
-    }
-  }
-
-  render () {
-    return (
-      <div>
-        {this.banner()}
+const Splash = () => (
+  <div className="main-div">
+    <SplashImage />
+    <nav className="main-nav">
+      <div className="nav-left">
+        <Link className="logo" to="/">PicturePx</Link>
       </div>
-    )
-  }
-}
+      <div className="nav-right">
+        <div><Link to="/login" className="login-link">Log In</Link></div>
+        <div><Link to="/signup" className="button">Sign Up</Link></div>
+      </div>
+    </nav>
+
+    <div className="splash-text">
+      <h1 className="header-section-headline">Come in to experience the world in pixelated art</h1>
+      <h2 className="header-sec-desc">Discover images by other users</h2>
+      <div className="outer-join-button">
+        <Link to="/signup" className="join-button">Join PicturePx</Link>
+      </div>
+    </div>
+  </div>
+)
+
+
 
 export default Splash;
