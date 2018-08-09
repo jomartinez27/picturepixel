@@ -12,6 +12,7 @@ const App = () => (
       <Link style={{textDecoration: 'none'}} className="logo-banner" to="/">PicturePx</Link>
       <GreetingContainer />
     </header>
+    <img src={window.image}/>
 
     <AuthRoute exact path="/login" component={LogInFormContainer} />
     <AuthRoute exact path="/signup" component={SignUpFormContainer} />
