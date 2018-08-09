@@ -1,42 +1,67 @@
-.banner {
-  display: flex;
-  background-color: yellow;
-  justify-content: space-between;
+nav.light {
+  display: block;
+}
+
+nav .logo {
   height: 50px;
-  font-weight: bold;
-  margin-bottom: 10px;
+  display: block;
+  float: left;
+  width: 80px;
+  margin: 10px 0;
+  background-size: 80px;
+  position: relative;
+  background: transparent;
+  text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
 }
 
-.logo-banner {
-  display: flex;
-  align-items: center;
-  padding: 5px;
-  margin: 10px;
-  color: #e6e6e6;
-  font-size: 20px;
+nav .right {
+  padding: 10px 0;
+  font-size: 14px;
+  color: #525558;
+  float: right;
 }
 
-.logo-banner:hover {
-  color: #0099e5;
+nav .light .right a {
+  color: #fff;
 }
 
-.header-button {
-  border-radius: 8px;
+nav .right a {
+  margin-left: 30px;
+}
+
+nav .right a.button {
   color: #FFF;
-  background-color: #0099e5;
-  border: none;
-  text-align: center;
-  font-size: 16px;
-  padding: 15px;
-  width: 140px;
-  cursor: pointer;
-  transition: all 0.5s;
-  margin: 5px;
+  font-weight: bold;
 }
 
-.account-required {
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+nav.light .button {
+  border-color: #0099e5;
+}
+
+nav .button {
+  display: inline-block;
+  line-height: 26px;
+  height: 30px;
+  border-radius: 30px;
+  border: 1px solid #0099e5;
+  padding: 0 15px;
+  margin: 10px 0 10px 30px;
+  background-color: #0099e5;
+}
+
+nav .button:hover {
+  background-color: #1ab2ff;
+  border: 1px solid #1ab2ff;
+}
+
+a {
+  background: transparent;
+  text-decoration: none;
+  outline: none;
+}
+
+nav {
+  height: 70px;
+  width: 100vw;
 }
