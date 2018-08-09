@@ -1,15 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Greeting = ({ currentUser, logout }) => {
+const Greeting = ({ currentUser, logout, location }) => {
 
-  const sessionLinks = () => (
-    <nav className="login-signup">
-      <Link to='/login'>Log In</Link>
-      <br />
-      <Link to='/signup'>Sign up</Link>
-    </nav>
-  )
+  const sessionLinks = () => {
+    if (location.pathname === '/login') {
+      return <Link to="/signup">Sign up</Link>
+    } else if (location.pathname === '/signup') {
+      return <Link to="/login">Log in</Link>
+    } else {
+      return <Link to='/'></Link>
+    }
+  }
 
   const personalGreeting = () => (
     [

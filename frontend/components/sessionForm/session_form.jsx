@@ -15,7 +15,7 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidMount() {
+  componentWillUnmount() {
     this.props.deleteErrors();
   }
 
@@ -28,7 +28,7 @@ class SessionForm extends React.Component {
   emailForm() {
     if (this.props.formType === 'signup') {
       return (
-        <label className="username-email">Email:
+        <label className="username-email">Email
           <input className="signup_input"
             type="text"
             value={this.state.email}
