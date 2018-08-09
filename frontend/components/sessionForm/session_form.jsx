@@ -10,8 +10,13 @@ class SessionForm extends React.Component {
       password: ""
     };
 
+
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.deleteErrors();
   }
 
   update(field) {
@@ -24,14 +29,11 @@ class SessionForm extends React.Component {
     if (this.props.formType === 'signup') {
       return (
         <label className="username-email">Email:
-          <br/>
-          &nbsp;
           <input className="signup_input"
             type="text"
             value={this.state.email}
             onChange={this.update('email')}
             placeholder='email'/>
-          <br/>
         </label>
       )
     }
@@ -73,40 +75,40 @@ class SessionForm extends React.Component {
 
   render () {
     return (
-      <div className="session-form-container">
-      {this.formTypeHeader()}
-      <br />
-      <br />
-      <form onSubmit={this.handleSubmit} className="session-form-box">
-        {this.renderErrors()}
+      <div className="session-form-outer">
+        <div className="full-page-session">
+        <div className="session-form-container">
+          <div className="form-type-header">{this.formTypeHeader()}</div>
+          <div className="session-form-input">
+            <form onSubmit={this.handleSubmit} className="form-container">
+              <div className="session-errors">{this.renderErrors()}</div>
 
-          <label className="username-email"><span>Username:</span>
-            <br/>
-            &nbsp;
-            <input className="signup_input"
-              type="text"
-              value={this.state.username}
-              onChange={this.update('username')}
-              placeholder="username"/>
-            <br/>
-          </label>
-        &nbsp;
-        {this.emailForm()}
-        &nbsp;
-        <label className="username-email">Password:
-          &nbsp;
-          <br/>
-          <input className="signup_input"
-            type="password"
-            value={this.state.password}
-            onChange={this.update('password')}
-            placeholder='6 or more characters'/>
-        </label>
-        &nbsp;
-        <br />
-        <input className="button-session" type='submit' value={this.props.formType.toUpperCase()}/>
-      </form>
-    </div>
+            <label>Username
+              <input
+                className="signup-input"
+                type="text"
+                value={this.state.username}
+                onChange={this.update('username')}
+                placeholder="username"/>
+            </label>
+
+            {this.emailForm()}
+
+            <label>Password
+              <input
+                className="signup-input"
+                type="password"
+                value={this.state.password}
+                onChange={this.update('password')}
+                placeholder="6 or more characters"/>
+            </label>
+
+            <input className="button-session" type='submit' value={this.props.formType.toUpperCase()}/>
+            </form>
+          </div>
+        </div>
+      </div>
+      </div>
     )
   }
 }
