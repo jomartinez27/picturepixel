@@ -36,6 +36,7 @@
 }
 
 .session-form-container p {
+  display: block;
   border: none;
   border-radius: 5px;
   text-align: center;
@@ -47,4 +48,9 @@
 
 .session-form-container p:hover {
   cursor: pointer;
+  background-color: #5fd370;
+}
+
+.button-session {
+  border-radius: 5px;
 }

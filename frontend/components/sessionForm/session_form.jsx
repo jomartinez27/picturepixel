@@ -111,6 +111,7 @@ class SessionForm extends React.Component {
         &nbsp;
         <br />
         <p onClick={this.handleSubmit}>Submit</p>
+        <input className="button-session" type='submit' value={this.props.formType.toUpperCase()}/>
       </form>
     </div>
     )
