@@ -7,7 +7,7 @@ const Splash = () => (
     <SplashImage />
     <nav className="main-nav">
       <div className="nav-left">
-        <Link className="logo" to="/">PicturePx</Link>
+        <Link className="logo" to="/">PixelPx</Link>
       </div>
       <div className="nav-right">
         <div><Link to="/login" className="login-link">Log In</Link></div>
@@ -19,7 +19,7 @@ const Splash = () => (
       <h1 className="header-section-headline">Come in to experience the world in pixelated art</h1>
       <h2 className="header-sec-desc">Discover images by other users</h2>
       <div className="outer-join-button">
-        <Link to="/signup" className="join-button">Join PicturePx</Link>
+        <Link to="/signup" className="join-button">Join PixelPx</Link>
       </div>
     </div>
   </div>

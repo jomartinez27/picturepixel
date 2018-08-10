@@ -50,13 +50,13 @@ class SessionForm extends React.Component {
     if (this.props.formType === 'signup') {
       return (
         <div>
-          <header className="signup-header">Join PicturePx</header>
+          <header className="signup-header">Join PixelPx</header>
         </div>
       )
     } else {
       return (
         <div>
-          <header className="login-header">Log In to PicturePx</header>
+          <header className="login-header">Log In to PixelPx</header>
         </div>
       )
     }
