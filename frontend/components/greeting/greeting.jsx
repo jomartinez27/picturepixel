@@ -41,7 +41,9 @@ class Greeting extends React.Component {
   render () {
     return (
       <div>
-        <input type="submit" value="Demo User" onClick={this.handleDemo}/>
+        <button className="demo-user" onClick={this.handleDemo}>
+          Demo User
+        </button>
         <input type="submit" value="logout" onClick={this.props.logout} />
       </div>
     )
