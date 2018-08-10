@@ -1,6 +1,3 @@
-// import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
-
 // const Greeting = ({ currentUser, logout, location }) => {
 //
 //   const sessionLinks = () => {
@@ -32,18 +29,9 @@ class Greeting extends React.Component {
     this.handleDemo = this.handleDemo.bind(this);
   }
 
-  handleDemo(e) {
-    e.preventDefault();
-    const demoUser = Object.assign({}, {username: 'demo', password: '123456'})
-    this.props.login(demoUser)
-  }
-
   render () {
     return (
       <div>
-        <button className="demo-user" onClick={this.handleDemo}>
-          Demo User
-        </button>
         <input type="submit" value="logout" onClick={this.props.logout} />
       </div>
     )

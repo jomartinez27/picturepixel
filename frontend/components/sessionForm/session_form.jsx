@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import DemoUserContainer from '../demo_user/demo_user_container';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -105,6 +106,7 @@ class SessionForm extends React.Component {
 
             <input className="button-session" type='submit' value={this.props.formType.toUpperCase()}/>
             </form>
+            <DemoUserContainer />
           </div>
         </div>
       </div>
