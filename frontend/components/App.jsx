@@ -6,13 +6,15 @@ import Splash from './splash/splash';
 import LogInFormContainer from './sessionForm/login_form_container';
 import SignUpFormContainer from './sessionForm/signup_form_container';
 import { AuthRoute } from '../util/route_util';
+import Home from './home/home_page';
 
 const App = () => (
   <div>
-    <Route path="/" component={GreetingContainer} className="persistent"/> 
+    <Route path="/" component={GreetingContainer}/> 
     <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+      <AuthRoute exact path="/home" component={Home} />
       <Route exact path="/" component={Splash}/>
     </Switch>
   </div>
