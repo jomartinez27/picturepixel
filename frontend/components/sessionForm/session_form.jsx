@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import DemoUserContainer from '../demo_user/demo_user_container';
+import Greeting from '../greeting/greeting';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -77,6 +78,7 @@ class SessionForm extends React.Component {
   render () {
     return (
       <div className="session-form-outer">
+        <Greeting location={this.props.location} />
         <div className="full-page-session">
         <div className="session-form-container">
           <div className="form-type-header">{this.formTypeHeader()}</div>

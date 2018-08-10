@@ -12,6 +12,7 @@ import Home from './home/home_page';
 const App = () => (
   <div>
     <LogoutContainer />
+    
     <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />

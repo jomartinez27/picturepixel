@@ -19,11 +19,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
 }
 
 
-.logo {
+.logo-splash {
   display: flex;
   justify-content: flex-start;
   border: none;
@@ -33,7 +32,7 @@
   color: #FFF;
 }
 
-.logo:hover {
+.logo-splash:hover {
   color: #eee;
 }
 

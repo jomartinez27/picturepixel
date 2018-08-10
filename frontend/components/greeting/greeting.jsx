@@ -21,18 +21,39 @@
 // }
 
 import React from 'react';
+import { Link, Switch, Route } from 'react-router-dom';
+import PersistLogo from './persist_logo';
+import SplashLogo from './splash_logo';
 
 class Greeting extends React.Component {
   constructor(props) {
     super(props);
-
-    this.handleDemo = this.handleDemo.bind(this);
   }
+
+    sessionLinks () {
+      if (this.props.location.pathname === '/login') {
+        return (
+          <div className="outer-signup-container">
+            <PersistLogo />
+            <Link to="/signup" className="persistent-signup">Sign up</Link>
+          </div>
+        )
+      } else if (this.props.location.pathname === '/signup') {
+        return (
+          <div className="outer-signup-container">
+            <PersistLogo />
+            <Link to="/login" className="persistent-login">Log in</Link>
+          </div>
+        )
+      } else {
+        return <Link to='/'></Link>
+      }
+    }
 
   render () {
     return (
       <div>
-        <input type="submit" value="logout" onClick={this.props.logout} />
+        {this.sessionLinks()}
       </div>
     )
   }

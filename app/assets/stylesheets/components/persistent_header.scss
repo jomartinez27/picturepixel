@@ -1,16 +1,49 @@
 .persistent-login {
-  color: red;
+  color: #000;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 40px;
+  padding: 10px;
+}
+
+.persistent-login:hover {
+  color: #0099e5;
+}
+
+.outer-signup-container {
+  display: flex;
+  justify-content: space-between;
 }
 
 .persistent-signup {
   display: flex;
-  border: 1px solid #41cb56;
-  width: 50px;
-  justify-content: center;
+  justify-content: flex-end;
+  background-color: #34bf49;
+  margin-right: 40px;
   align-items: center;
-  background-color: #41cb56;
   color: #FFF;
   padding: 10px 20px;
-  height: 50px;
-  text-align: center;
+  height: 30px;
 }
+
+.persistent-signup:hover {
+  background-color: #41cb56;
+}
+
+.logo-two {
+  display: flex;
+  margin-left: 40px;
+  margin-top: 14px;
+  color: #000;
+  font-family: 'Orbitron', sans-serif;
+}
+// display: flex;
+// border: 1px solid #41cb56;
+// width: 50px;
+// justify-content: flex-end;
+// align-items: center;
+// background-color: #41cb56;
+// color: #FFF;
+// padding: 10px 20px;
+// height: 50px;
+// text-align: center;

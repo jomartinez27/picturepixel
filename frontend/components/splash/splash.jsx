@@ -7,7 +7,7 @@ const Splash = () => (
     <SplashImage />
     <nav className="main-nav">
       <div className="nav-left">
-        <Link className="logo" to="/">PixelPx</Link>
+        <Link className="logo-splash" to="/">PixelPx</Link>
       </div>
       <div className="nav-right">
         <div><Link to="/login" className="login-link">Log In</Link></div>
