@@ -7,7 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 ActiveRecord::Base.transaction do
-  User.destroy_all
-
   demo = User.create!(username: 'demo', email: 'demo@demo', password: '123456')
 end
