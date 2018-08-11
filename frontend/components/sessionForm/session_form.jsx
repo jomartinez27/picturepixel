@@ -63,6 +63,18 @@ class SessionForm extends React.Component {
     }
   }
 
+  formTypeButton() {
+    if (this.props.formType === 'signup') {
+      return (
+        <input type="submit" className="button-session" value="Sign Up"/>
+      )
+    } else {
+      return (
+        <input type="submit" className="button-session" value="Log in"/>
+      )
+    }
+  }
+
   renderErrors() {
     return (
       <ul>
@@ -106,7 +118,7 @@ class SessionForm extends React.Component {
                 placeholder="6 or more characters"/>
             </label>
 
-            <input className="button-session" type='submit' value={this.props.formType.toUpperCase()}/>
+            {this.formTypeButton()}
             </form>
             <DemoUserContainer />
           </div>

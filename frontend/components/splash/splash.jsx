@@ -16,7 +16,7 @@ const Splash = () => (
     </nav>
 
     <div className="splash-text">
-      <h1 className="header-section-headline">Come in to experience the world in pixelated art</h1>
+      <h1 className="header-section-headline">Experience the world in Pixelated Art</h1>
       <h2 className="header-sec-desc">Discover images by other users</h2>
       <div className="outer-join-button">
         <Link to="/signup" className="join-button">Join PixelPx</Link>
