@@ -98,7 +98,7 @@ class SessionForm extends React.Component {
             <form onSubmit={this.handleSubmit} className="form-container">
               <div className="session-errors">{this.renderErrors()}</div>
 
-            <label>Username
+            <label className="username-email">Username
               <input
                 className="signup-input"
                 type="text"
@@ -109,7 +109,7 @@ class SessionForm extends React.Component {
 
             {this.emailForm()}
 
-            <label>Password
+            <label className="username-email">Password
               <input
                 className="signup-input"
                 type="password"
@@ -119,8 +119,8 @@ class SessionForm extends React.Component {
             </label>
 
             {this.formTypeButton()}
-            </form>
             <DemoUserContainer />
+            </form>
           </div>
         </div>
       </div>

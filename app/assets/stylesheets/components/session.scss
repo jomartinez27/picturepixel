@@ -29,9 +29,8 @@
 .session-form-input {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin: 24px;
-  line-height: 2;
 }
 
 form label {
@@ -40,6 +39,7 @@ form label {
 
 form label input {
   height: 37px;
+  padding-left: 6px;
 }
 
 input {
@@ -68,4 +68,13 @@ input:focus {
 
 .session-errors {
   color: #ff4c4c;
+  display: inline-block;
+  bottom: 47px;
+  position: relative;
+  height: 40px;
+}
+
+.username-email {
+  display: block;
+  height: 70px;
 }
