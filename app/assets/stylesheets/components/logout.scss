@@ -1,8 +1,6 @@
 .profile-drop {
   background-color: #FFF;
   color: #000;
-  margin-right: 40px;
-  font-size: 16px;
   border: none;
 }
 
@@ -10,7 +8,8 @@
   position: relative;
   display: inline-block;
   float: right;
-  margin-right: 40px;
+  margin-right: 100px;
+  top: 10px;
 }
 
 .dropdown-content {

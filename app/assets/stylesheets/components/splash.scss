@@ -1,9 +1,12 @@
 .main-nav {
   display: flex;
+  justify-content: space-between;
 }
 
 .nav-left {
-  width: 50%;
+  display: inline-block;
+  top: 16px;
+  position: relative;
 }
 
 .nav-right {

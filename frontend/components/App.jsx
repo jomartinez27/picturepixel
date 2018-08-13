@@ -13,8 +13,6 @@ import Photo from './photo/photo';
 
 const App = () => (
   <div>
-    <LogoutContainer />
-
     <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
