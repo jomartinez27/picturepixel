@@ -1,0 +1,47 @@
+.profile-drop {
+  background-color: #FFF;
+  color: #000;
+  margin-right: 40px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  float: right;
+  margin-right: 40px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #eee;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1
+}
+
+.dropdown-content button {
+  color: #000;
+  padding: 12px 16px;
+  display: block
+}
+
+.dropdown-content button:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+//
+// .logout-button {
+//   display: block;
+//   float: right;
+//   margin-right: 40px;
+//   cursor: pointer;
+// }

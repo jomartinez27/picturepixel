@@ -2,6 +2,7 @@ import React from 'react'
 
 // import Form from './form';
 import PhotoIndex from './photo_index';
+import PersistLogoContainer from '../greeting/persist_logo_container';
 
 class Photo extends React.Component {
   constructor(props) {
@@ -29,6 +30,7 @@ class Photo extends React.Component {
   render () {
     return (
       <div>
+        <PersistLogoContainer />
         <PhotoIndex photos={this.state.photos} />
       </div>
     )
