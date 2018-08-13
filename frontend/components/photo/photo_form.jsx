@@ -29,6 +29,7 @@ class PhotoForm extends React.Component {
   render () {
     return (
       <div className="photo-form">
+        <i class="material-icons photo-form-icon">cloud_upload
       <form onSubmit={this.handleSubmit.bind(this)}>
         <label className="photo-title">Title
           <input
@@ -48,6 +49,7 @@ class PhotoForm extends React.Component {
 
         <button className="photo-form-btn" onClick={this.handleSubmit}>Submit</button>
       </form>
+    </i>
     </div>
     )
   }
