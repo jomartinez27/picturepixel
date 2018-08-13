@@ -9,17 +9,21 @@ import SignUpFormContainer from './sessionForm/signup_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Home from './home/home_page';
 
+import Photo from './photo/photo';
+
 const App = () => (
   <div>
     <LogoutContainer />
-    
+
     <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
       <ProtectedRoute exact path="/home" component={Home} />
       <Route exact path="/" component={Splash}/>
+      <Route exact path ="/photos" component={Photo} />
       <Redirect to="/" />
     </Switch>
+
   </div>
 );
 
