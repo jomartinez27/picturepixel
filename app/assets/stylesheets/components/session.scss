@@ -1,7 +1,11 @@
+.session-form-outer {
+  background-color: #eee;
+}
+
 .session-form-container {
   display: flex;
   flex-direction: column;
-  border: 1px solid #eeeff2;
+  border: 1px solid #000;;
   margin: 75px auto;
   width: 400px;
   padding: 10px;
@@ -19,6 +23,7 @@
 
 .session-form-container {
   display: flex;
+  background-color: #FFF;
 }
 
 .session-form-input {
