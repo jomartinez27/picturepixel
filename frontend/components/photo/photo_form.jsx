@@ -22,29 +22,33 @@ class PhotoForm extends React.Component {
 
   handleInput(field) {
     return e => {
-      this.setState({[field]: e.currentTarget})
+      this.setState({[field]: e.target.value})
     }
   }
 
-  handleModal() {
+  handleBtnModal() {
     const modal = document.getElementById('myModal');
-    const btn = document.getElementById("myBtn");
-    const span = document.getElementByClassName("close")[0];
+    return () => modal.style.display = 'block';
+  }
+
+  handleSpanModal() {
+    const modal = document.getElementById('myModal')
+    return () => modal.style.display = "none";
   }
 
   render () {
     return (
       <div className="photo-form">
-        <i id="myBtn" className="material-icons photo-form-icon">cloud_upload</i>
+        <i id="myBtn" className="material-icons photo-form-icon" onClick={this.handleBtnModal()}>cloud_upload</i>
         <form id="myModal" className="modal" onClick={this.handleSubmit.bind(this)}>
           <div className="modal-content">
-            <span className="close">&times;</span>
+            <span className="close" onClick={this.handleSpanModal()}>&times;</span>
 
           <label className="photo-title">Title
             <input
               className="photo-input"
               type="text"
-              value={this.state.title}
+              value={`${this.state.title}`}
               onChange={this.handleInput('title')}/>
           </label>
 

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Photo from './photo';
 
 const mapStateToProps = state => ({
-  currentUser = state.entities.users[state.session.id]
+  currentUser: state.entities.users[state.session.id]
 })
 
 const mapDispatchToProps = dispatch => ({

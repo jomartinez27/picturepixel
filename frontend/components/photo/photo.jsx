@@ -31,7 +31,6 @@ class Photo extends React.Component {
     return (
       <div>
         <NavBar />
-        <PhotoForm />
         <PhotoIndex photos={this.state.photos} />
       </div>
     )
