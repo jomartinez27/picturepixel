@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import SplashImage from '../splash_image';
+import GitBit from '../images/git';
 
 const Splash = () => (
   <div className="main-div">
@@ -22,6 +23,7 @@ const Splash = () => (
         <Link to="/signup" className="join-button">Join PixelPx</Link>
       </div>
     </div>
+    <GitBit />
   </div>
 )
 

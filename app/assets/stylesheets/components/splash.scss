@@ -19,6 +19,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 167px;
 }
 
 
@@ -102,6 +103,7 @@ nav {
   padding-top: 18px;
   margin: 0 auto;
   color: #FFF;
+  text-shadow: 2px 2px #000;
 }
 
 .header-sec-desc {
@@ -135,4 +137,14 @@ nav {
 .join-button:hover {
   background-color: #00aaff;
   border: 1px solid #00aaff;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 50px;
+}
+
+.splash-footer-img {
+  width: 20%;
 }
