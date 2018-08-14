@@ -8,13 +8,26 @@ class PhotoForm extends React.Component {
     this.state = {
       title: '',
       description: '',
-      photoFile: null
+      photoFile: null,
+      photoUrl: null
     }
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleFile = this.handleFile.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createPhoto(this.state.photoFile)
+
+    const formData = new FormData();
+    formData.append('photo[title]', this.state.title);
+    formData.append('photo[description]', this.state.description);
+
+    if (this.state.photoFile) {
+      formData.append('photo[photo]', this.state.photoFile)
+    }
+
+    this.props.createPhoto(formData);
   }
 
   handleFile(e) {
@@ -36,20 +49,24 @@ class PhotoForm extends React.Component {
   }
 
   handleBtnModal() {
-    const modal = document.getElementById('myModal');
-    return () => modal.style.display = 'block';
+    return () => {
+      const modal = document.getElementById('my-Modal');
+      modal.style.display = 'block';
+    }
   }
 
   handleSpanModal() {
-    const modal = document.getElementById('myModal')
-    return () => modal.style.display = "none";
+    return () => {
+      const modal = document.getElementById('my-Modal')
+      modal.style.display = "none";
+    }
   }
 
   render () {
     return (
       <div className="photo-form">
         <i id="myBtn" className="material-icons photo-form-icon" onClick={this.handleBtnModal()}>cloud_upload</i>
-        <form id="myModal" className="modal" onClick={this.handleSubmit.bind(this)}>
+        <form id="my-Modal" className="modal" onSubmit={this.handleSubmit}>
           <div className="modal-content">
             <span className="close" onClick={this.handleSpanModal()}>&times;</span>
 

@@ -2,16 +2,23 @@ import * as PhotoUtil from '../util/photo_api_util';
 
 export const RECEIVE_PHOTOS = 'RECEIVE_PHOTOS';
 export const RECEIVE_PHOTO = 'RECEIVE_PHOTO';
+export const RECEIVE_PHOTO_ERRORS = 'RECEIVE_PHOTO_ERRORS';
+export const DELETE_PHOTO_ERRORS = 'DELETE_PHOTO_ERRORS';
 
-export const getPhotos = () => dispatch => (
-  PhotoUtil.photos()
+export const fetchPhotos = () => dispatch => (
+  PhotoUtil.fetchPhotos()
     .then(photos => dispatch(receivePhotos(photos)))
 )
 
 export const createPhoto = photo => dispatch => (
   PhotoUtil.createPhoto(photo)
-    .then(photo => dispatch(receivePhoto(photo)))
-)
+    .then(backphoto => dispatch(receivePhoto(backphoto)))
+);
+
+export const deleteErrors = () => {
+  return dispatch =>
+      dispatch({ type: DELETE_PHOTO_ERRORS })
+}
 
 export const receivePhoto = photo => ({
   type: RECEIVE_PHOTO,
@@ -22,3 +29,8 @@ export const receivePhotos = photos => ({
   type: RECEIVE_PHOTOS,
   photos
 })
+//
+// export const receivePhotoErrors = errors => ({
+//   type: RECEIVE_PHOTO_ERRORS,
+//   errors
+// })

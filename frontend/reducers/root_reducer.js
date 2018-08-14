@@ -8,8 +8,7 @@ import photos from './photo_reducer';
 const rootReducer = combineReducers({
   entities,
   session,
-  errors,
-  photos
+  errors
 });
 
 export default rootReducer;

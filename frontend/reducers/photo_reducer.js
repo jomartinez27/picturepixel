@@ -1,4 +1,4 @@
-import { RECEIVE_PHOTO, RECEIVE_PHOTOS } from '../actions/photo_actions';
+import { RECEIVE_PHOTO, RECEIVE_PHOTOS, RECEIVE_PHOTO_ERRORS } from '../actions/photo_actions';
 import merge from 'lodash/merge';
 
 const photoReducer = (state = {}, action) => {
@@ -6,10 +6,12 @@ const photoReducer = (state = {}, action) => {
   let newState = merge({}, state)
   switch (action.type) {
     case RECEIVE_PHOTO:
-      return merge(newState, {[action.photo.id]: action.photo})
+      return merge(newState, {[action.photo.photographer_id]: action.photo})
     case RECEIVE_PHOTOS:
-      return merge(newState, action.photos)
+      return merge(newState, action.photos);
     default:
       return state;
   }
 }
+
+export default photoReducer;
