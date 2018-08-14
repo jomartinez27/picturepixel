@@ -14,10 +14,19 @@ class PhotoForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    
   }
 
   handleFile(e) {
-    this.setState({photoFile: e.currentTarget.files[0]})
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({photoFile: file, photoUrl: fileReader.result});
+    };
+
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
   }
 
   handleInput(field) {
@@ -44,7 +53,7 @@ class PhotoForm extends React.Component {
           <div className="modal-content">
             <span className="close" onClick={this.handleSpanModal()}>&times;</span>
 
-          <label className="photo-title">Title
+          <label className="photo-form-title">Title
             <input
               className="photo-input"
               type="text"
@@ -52,13 +61,19 @@ class PhotoForm extends React.Component {
               onChange={this.handleInput('title')}/>
           </label>
 
-          <label className="photo-body">Description
+          <label className="photo-form-body">Description
             <textarea
               className="photo-input"
               value={this.state.description}
               onChange={this.handleInput('description')}>
             </textarea>
           </label>
+
+            <input
+              type="file"
+              onChange={this.handleFile.bind(this)}/>
+
+            <button className="photo-form-btn" onClick={this.handleSubmit}>Post a Pic</button>
           </div>
         </form>
       </div>

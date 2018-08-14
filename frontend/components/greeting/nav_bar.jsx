@@ -10,8 +10,10 @@ class NavBar extends React.Component {
       <div className="navbar-container">
         <PersistLogoContainer />
         <LoggedInContainer />
-        <Logout />
-        <PhotoFormContainer />
+        <div className="nav-right-second">
+          <Logout />
+          <PhotoFormContainer />
+        </div>
       </div>
     )
   }
