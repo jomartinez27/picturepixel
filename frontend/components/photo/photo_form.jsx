@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { withRouter, Redirect } from 'react-router-dom'
 
 class PhotoForm extends React.Component {
   constructor(props) {
@@ -16,6 +17,10 @@ class PhotoForm extends React.Component {
     this.handleFile = this.handleFile.bind(this);
   }
 
+  componentDidMount() {
+    this.props.fetchPhotos();
+  }
+
   handleSubmit(e) {
     e.preventDefault();
 
@@ -27,7 +32,8 @@ class PhotoForm extends React.Component {
       formData.append('photo[photo]', this.state.photoFile)
     }
 
-    this.props.createPhoto(formData);
+    this.props.createPhoto(formData)
+      .then(this.handleSpanModal())
   }
 
   handleFile(e) {
@@ -98,4 +104,4 @@ class PhotoForm extends React.Component {
   }
 }
 
-export default PhotoForm;
+export default withRouter(PhotoForm);

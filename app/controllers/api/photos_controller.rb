@@ -13,7 +13,7 @@ class Api::PhotosController < ApplicationController
     @photo.photographer_id = current_user.id
 
     if @photo.save
-      render json: :show
+      render "api/photos/show"
     else
       render json: @photo.errors.full_messages
     end

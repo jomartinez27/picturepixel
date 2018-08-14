@@ -25,17 +25,14 @@ export const deleteErrors = () => {
       dispatch({ type: DELETE_PHOTO_ERRORS })
 }
 
-export const receivePhoto = photo => ({
+export const receivePhoto = photo => {
+  return ({
   type: RECEIVE_PHOTO,
   photo
 })
+}
 
 export const receivePhotos = photos => ({
   type: RECEIVE_PHOTOS,
   photos
 })
-//
-// export const receivePhotoErrors = errors => ({
-//   type: RECEIVE_PHOTO_ERRORS,
-//   errors
-// })

@@ -2,36 +2,51 @@ import React from 'react'
 
 import PhotoIndex from './photo_index';
 import NavBar from '../greeting/nav_bar';
+import { withRouter } from 'react-router-dom'
 
 class Photo extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      photos: []
+      photos: this.props.photos
     }
 
-    this.fetchPhotos = this.fetchPhotos.bind(this);
   }
-
-  fetchPhotos() {
-    $.ajax({
-      url: 'api/photos',
-    }).then(photos => {
-      this.setState({photos})
-    })
-  }
-
 
   componentDidMount() {
-    this.fetchPhotos();
+    this.props.fetchPhotos()
+  }
+
+  componentWillReceiveProps(newProps){
+    if (newProps.photos.length !== this.state.photos.length) {
+      this.setState({photos: newProps.photos})
+    }
   }
 
   render () {
+    if (this.state.photos.length === 0) {
+      return "loading"
+    }
     return (
       <div>
         <NavBar />
-        <PhotoIndex photos={this.state.photos} />
+          <div className="flow-photo">
+            <ul className="ul-photo-list">
+              <div className="photo-container">
+                {this.state.photos.map(photo => <li
+                  className="photo-list"
+                  key={photo.id}>
+                  <div className="photo-header">
+                    <i className="material-icons profile-drop">account_circle</i>
+                    <p className="photo-title">{photo.title}</p>
+                  </div>
+                  <img className="photo" src={photo.photoUrl}/>
+                  <h2 className="photo-footer">{photo.description}</h2>
+                </li>)}
+              </div>
+            </ul>
+          </div>
       </div>
     )
   }
@@ -39,4 +54,4 @@ class Photo extends React.Component {
 
 
 
-export default Photo;
+export default withRouter(Photo);

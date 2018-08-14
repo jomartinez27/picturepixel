@@ -7,18 +7,16 @@ import Splash from './splash/splash';
 import LogInFormContainer from './sessionForm/login_form_container';
 import SignUpFormContainer from './sessionForm/signup_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import Home from './home/home_page';
 import RedirectedContainer from './redirected_container';
 
-import Photo from './photo/photo';
+import PhotoContainer from './photo/photo_container';
 
 const App = () => (
   <div>
     <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-      <ProtectedRoute exact path="/home" component={Home} />
-      <ProtectedRoute exact path ="/photos" component={Photo} />
+      <ProtectedRoute exact path ="/photos" component={PhotoContainer} />
       <Route exact path="/" component={Splash}/>
       <RedirectedContainer />
     </Switch>
