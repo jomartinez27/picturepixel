@@ -1,4 +1,8 @@
 class Api::PhotosController < ApplicationController
+  def show
+    @photo = Photo.find(params[:id])
+  end
+
   def index
     @photos = Photo.all
     render :index

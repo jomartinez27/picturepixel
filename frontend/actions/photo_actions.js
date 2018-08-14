@@ -10,6 +10,11 @@ export const fetchPhotos = () => dispatch => (
     .then(photos => dispatch(receivePhotos(photos)))
 )
 
+export const fetchPhoto = id => dispatch => (
+  PhotoUtil.fetchPhoto(id)
+    .then(photo => dispatch(receivePhoto(photo)))
+)
+
 export const createPhoto = photo => dispatch => (
   PhotoUtil.createPhoto(photo)
     .then(backphoto => dispatch(receivePhoto(backphoto)))

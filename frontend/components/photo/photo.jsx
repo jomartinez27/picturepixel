@@ -10,11 +10,21 @@ class Photo extends React.Component {
     this.state = {
       photos: []
     }
+
+    this.fetchPhotos = this.fetchPhotos.bind(this);
+  }
+
+  fetchPhotos() {
+    $.ajax({
+      url: 'api/photos',
+    }).then(photos => {
+      this.setState({photos})
+    })
   }
 
 
   componentDidMount() {
-    this.props.fetchPhotos();
+    this.fetchPhotos();
   }
 
   render () {

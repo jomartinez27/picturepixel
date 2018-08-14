@@ -14,3 +14,10 @@ export const createPhoto = photo => (
     processData: false
   })
 )
+
+export const fetchPhoto = id => (
+  $.ajax({
+    url: `api/photos${id}`,
+    method: 'GET'
+  })
+)

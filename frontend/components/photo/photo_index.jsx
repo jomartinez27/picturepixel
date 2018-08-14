@@ -3,6 +3,7 @@ import Photo from './photo';
 
 const PhotoIndex = ({photos}) => (
   <div className="flow-photo">
+    <ul className="ul-photo-list">
   <div className="photo-container">
     {photos.map(photo => <li
       className="photo-list"
@@ -15,6 +16,7 @@ const PhotoIndex = ({photos}) => (
       <h2 className="photo-footer">{photo.description}</h2>
     </li>)}
   </div>
+</ul>
 </div>
 )
 
