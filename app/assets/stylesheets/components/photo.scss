@@ -1,9 +1,6 @@
 .flow-photo {
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
   flex-direction: column;
-  -webkit-box-align: center;
   align-items: center;
 }
 
@@ -21,16 +18,27 @@
   font-size: 0;
 }
 
-.photo-title {
+.photo-header {
   height: 61px;
   text-align: left;
   overflow: hidden;
   margin: 10px 15px;
   display: flex;
   align-items: center;
-  -webkit-box-align: center;
-  -webkit-box-pack: start;
   justify-content: flex-start;
+}
+
+.photo-profile {
+  display: inline-block;
+  position: relative;
+  left: 20px;
+  bottom: 8px;
+}
+
+.photo-title {
+  display: block;
+  left: 5px;
+  position: relative;
 }
 
 .photo-footer {

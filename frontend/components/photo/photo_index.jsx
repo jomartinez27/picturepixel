@@ -7,7 +7,10 @@ const PhotoIndex = ({photos}) => (
     {photos.map(photo => <li
       className="photo-list"
       key={photo.id}>
-      <h2 className="photo-title">{photo.title}</h2>
+      <div className="photo-header">
+        <i className="material-icons profile-drop">account_circle</i>
+        <p className="photo-title">{photo.title}</p>
+      </div>
       <img className="photo" src={photo.photoUrl}/>
       <h2 className="photo-footer">{photo.description}</h2>
     </li>)}
