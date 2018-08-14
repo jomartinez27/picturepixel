@@ -10,7 +10,9 @@ const PhotoIndex = ({photos}) => {
             className="photo-list"
             key={photo.id}>
             <div className="photo-header">
-              <i className="material-icons profile-drop">account_circle</i>
+              <div className="photo-profile-logo">
+                <i className="material-icons profile-drop">account_circle</i>
+                </div>
               <p className="photo-title">{photo.title}</p>
             </div>
             <img className="photo" src={photo.photoUrl}/>

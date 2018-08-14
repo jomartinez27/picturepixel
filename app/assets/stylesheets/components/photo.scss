@@ -6,7 +6,7 @@
 
 .photo-container {
   border-radius: 3px;
-  border: 1px solid #000;
+  border: 1px solid #EEE;
   margin-bottom: 20px;
   background-color: #FFF;
   margin: 0 210px;
@@ -23,10 +23,10 @@
   height: 61px;
   text-align: left;
   overflow: hidden;
-  margin: 10px 15px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  border-bottom: 1px solid #000;
 }
 
 .photo-profile {
@@ -40,6 +40,7 @@
   display: block;
   left: 5px;
   position: relative;
+  bottom: 2px;
 }
 
 .photo-footer {
@@ -51,4 +52,8 @@
   display: block;
   border: 1px solid black;
   margin: 30px;
+}
+
+.photo-profile-logo {
+  margin-left: 20px;
 }
