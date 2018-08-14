@@ -8,6 +8,10 @@
 
 ActiveRecord::Base.transaction do
   User.destroy_all
+  Photo.destroy_all
 
   demo = User.create!(username: 'demo', email: 'demo@demo', password: '123456')
+  photo1 = Photo.new(title: 'some pixel art', description: 'a cool photo of a street pixelated', photographer_id: 1)
+  photo1.photo.attach(io: File.open("./app/assets/images/cyberpunk-street.png"), filename: "cyberpunk-sreet.png")
+  photo1.save!
 end
