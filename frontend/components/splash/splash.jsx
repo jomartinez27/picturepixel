@@ -9,6 +9,7 @@ const Splash = () => (
     <nav className="main-nav">
       <div className="nav-left">
         <Link className="logo-splash" to="/">PixelPx</Link>
+        <GitBit />
       </div>
       <div className="nav-right">
         <div><Link to="/login" className="login-link">Log In</Link></div>
@@ -23,7 +24,6 @@ const Splash = () => (
         <Link to="/signup" className="join-button">Join PixelPx</Link>
       </div>
     </div>
-    <GitBit />
   </div>
 )
 

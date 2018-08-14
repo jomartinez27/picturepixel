@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 
-import Photo from './photo';
+import PhotoForm from './photo_form';
+import { createPhoto, getPhotos } from '../../actions/photo_actions';
 
 const mapStateToProps = state => ({
   currentUser: state.entities.users[state.session.id]
@@ -8,7 +9,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   createPhoto: photo => dispatch(createPhoto(photo)),
-  fetchPhotos: () => dispatch(fetchPhotos())
+  getPhotos: () => dispatch(getPhotos())
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Photo);
+export default connect(mapStateToProps, mapDispatchToProps)(PhotoForm);

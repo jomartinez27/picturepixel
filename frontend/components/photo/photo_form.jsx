@@ -14,7 +14,7 @@ class PhotoForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    
+    this.props.createPhoto(this.state.photoFile)
   }
 
   handleFile(e) {
