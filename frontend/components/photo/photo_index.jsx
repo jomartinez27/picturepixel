@@ -2,9 +2,17 @@ import React from 'react';
 import Photo from './photo';
 
 const PhotoIndex = ({photos}) => (
-  <div>
-    {photos.map(photo => <li key={photo.id}>{photo.title}<img src={photo.photoUrl}/></li>)}
+  <div className="flow-photo">
+  <div className="photo-container">
+    {photos.map(photo => <li
+      className="photo-list"
+      key={photo.id}>
+      <h2 className="photo-title">{photo.title}</h2>
+      <img className="photo" src={photo.photoUrl}/>
+      <h2 className="photo-footer">{photo.description}</h2>
+    </li>)}
   </div>
+</div>
 )
 
 export default PhotoIndex

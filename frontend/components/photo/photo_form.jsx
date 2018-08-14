@@ -48,7 +48,7 @@ class PhotoForm extends React.Component {
             <input
               className="photo-input"
               type="text"
-              value={`${this.state.title}`}
+              value={this.state.title}
               onChange={this.handleInput('title')}/>
           </label>
 

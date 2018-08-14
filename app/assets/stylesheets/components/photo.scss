@@ -1,0 +1,39 @@
+.flow-photo {
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.photo-container {
+  border-radius: 3px;
+  border: 1px solid #000;
+  margin-bottom: 20px;
+  background-color: #FFF;
+  margin: 0 210px;
+}
+
+.photo {
+  display: block;
+  background-color: #FFF;
+  font-size: 0;
+}
+
+.photo-title {
+  height: 61px;
+  text-align: left;
+  overflow: hidden;
+  margin: 10px 15px;
+  display: flex;
+  align-items: center;
+  -webkit-box-align: center;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+}
+
+.photo-footer {
+  padding: 15px;
+  text-align: left;
+}
