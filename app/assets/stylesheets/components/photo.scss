@@ -5,6 +5,8 @@
 }
 
 .photo-container {
+  display: flex;
+  flex-direction: column-reverse;
   border-radius: 3px;
   border: 1px solid #EEE;
   margin-bottom: 20px;

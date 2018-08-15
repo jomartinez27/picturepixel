@@ -1,4 +1,6 @@
 class Api::PhotosController < ApplicationController
+  before_action :require_logged_in
+
   def show
     @photo = Photo.find(params[:id])
   end
@@ -17,6 +19,12 @@ class Api::PhotosController < ApplicationController
     else
       render json: @photo.errors.full_messages
     end
+  end
+
+  def destroy
+    @photo = Photo.find_by(photographer_id: current_user.id)
+    @photo.destroy
+    render json: ["Photo deleted"]
   end
 
   private
