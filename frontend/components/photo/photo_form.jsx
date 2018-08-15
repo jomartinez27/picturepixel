@@ -33,7 +33,9 @@ class PhotoForm extends React.Component {
     }
 
     this.props.createPhoto(formData)
-      .then(this.handleSpanModal())
+      .then(this.handleSpanModal());
+
+    this.setState({title: '', description: '', photoUrl: null, photoFile: null})
   }
 
   handleFile(e) {
@@ -71,7 +73,7 @@ class PhotoForm extends React.Component {
   render () {
     return (
       <div className="photo-form">
-        <i id="myBtn" className="material-icons photo-form-icon" onClick={this.handleBtnModal()}>cloud_upload</i>
+        <i id="myBtn" className="material-icons cloud photo-form-icon" onClick={this.handleBtnModal()}>cloud_upload</i>
         <form id="my-Modal" className="modal" onSubmit={this.handleSubmit}>
           <div className="modal-content">
             <span className="close" onClick={this.handleSpanModal()}>&times;</span>
@@ -94,7 +96,7 @@ class PhotoForm extends React.Component {
 
             <input
               type="file"
-              onChange={this.handleFile.bind(this)}/>
+              onChange={this.handleFile}/>
 
             <button className="photo-form-btn" onClick={this.handleSubmit}>Post a Pic</button>
           </div>

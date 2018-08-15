@@ -4,6 +4,18 @@
   align-items: center;
   position: relative;
   margin: 0 16px;
+  border: 1px solid #34bf49;
+  background-color: #34bf49;
+  padding: 12px;
+}
+
+.cloud {
+  color: aliceblue;
+}
+
+.photo-form:hover {
+  background-color: #5fd370;
+  border-color: #5fd370;
 }
 
 .photo-form-icon {

@@ -3,6 +3,7 @@ import React from 'react'
 import PhotoIndex from './photo_index';
 import NavBar from '../greeting/nav_bar';
 import { withRouter } from 'react-router-dom'
+import DeletePhotoContainer from './edit_photo_container';
 
 class Photo extends React.Component {
   constructor(props) {
@@ -43,6 +44,7 @@ class Photo extends React.Component {
                   </div>
                   <img className="photo" src={photo.photoUrl}/>
                   <h2 className="photo-footer">{photo.description}</h2>
+                  <DeletePhotoContainer />
                 </li>)}
               </div>
             </ul>

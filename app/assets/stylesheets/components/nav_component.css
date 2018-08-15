@@ -1,0 +1,63 @@
+.nav-right-second {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 26px;
+}
+
+.user-name {
+  animation-duration: 3s;
+  animation-name: slideFromTop;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+}
+
+@keyframes slideFromTop {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.slideBack {
+  border: 1px solid #34bf49;
+  background-color: #34bf49;
+  padding: 12px;
+  animation-duration: 3s;
+  animation-name: slideBack;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  color: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+@keyframes slideBack {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-110%);
+  }
+}
+
+.gone {
+  display: none;
+}
+
+.user-name-block {
+  border: 1px solid #34bf49;
+  background-color: #34bf49;
+  padding: 12px;
+  color: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}

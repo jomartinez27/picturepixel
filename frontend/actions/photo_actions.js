@@ -4,6 +4,8 @@ export const RECEIVE_PHOTOS = 'RECEIVE_PHOTOS';
 export const RECEIVE_PHOTO = 'RECEIVE_PHOTO';
 export const RECEIVE_PHOTO_ERRORS = 'RECEIVE_PHOTO_ERRORS';
 export const DELETE_PHOTO_ERRORS = 'DELETE_PHOTO_ERRORS';
+export const REMOVE_PHOTO = 'REMOVE_PHOTO';
+
 
 export const fetchPhotos = () => dispatch => (
   PhotoUtil.fetchPhotos()
@@ -19,6 +21,16 @@ export const createPhoto = photo => dispatch => (
   PhotoUtil.createPhoto(photo)
     .then(backphoto => dispatch(receivePhoto(backphoto)))
 );
+
+export const deletePhoto = photoId => dispatch => (
+  PhotoUtil.deletePhoto(photoId)
+    .then(photoId => dispatch(removePhoto(photoId)))
+)
+
+export const removePhoto = photoId => ({
+  type: REMOVE_PHOTO,
+  photoId
+})
 
 export const deleteErrors = () => {
   return dispatch =>
