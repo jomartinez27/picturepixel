@@ -18,10 +18,6 @@ const mapDispatchToProps = dispatch => {
 }
 
 class EditPhotoForm extends React.Component {
-  componentDidMount() {
-    this.props.fetchPhoto(this.props.match.params.photoId)
-  }
-
   componentWillReceiveProps(nextProps) {
     if (this.props.photo.id !== nextProps.match.params.photoId) {
       this.props.fetchPhoto(nextProps.match.params.photoId);
@@ -32,7 +28,7 @@ class EditPhotoForm extends React.Component {
     const { deletePhoto, photo} = this.props;
     return (
       <div className="delete-container">
-        <button onClick={deletePhoto}><i className="material-icons">delete_outline</i></button>
+        <button onClick={() => deletePhoto(photo.id)}><i className="material-icons">delete_outline</i></button>
       </div>
     )
   }

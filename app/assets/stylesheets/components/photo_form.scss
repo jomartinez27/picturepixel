@@ -7,10 +7,13 @@
   border: 1px solid #34bf49;
   background-color: #34bf49;
   padding: 12px;
+  height: 25px;
 }
 
 .cloud {
   color: aliceblue;
+  position: relative;
+  top: 16px;
 }
 
 .photo-form:hover {
@@ -64,4 +67,14 @@
   background-color: #FFF;
   width: 100%;
   margin-bottom: 50px;
+}
+
+.upload-cloud {
+  display: block;
+  position: relative;
+  text-align: center;
+}
+
+.upload-cloud > p {
+  color: aliceblue;
 }

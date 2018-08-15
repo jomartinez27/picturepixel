@@ -24,12 +24,12 @@ export const createPhoto = photo => dispatch => (
 
 export const deletePhoto = photoId => dispatch => (
   PhotoUtil.deletePhoto(photoId)
-    .then(photoId => dispatch(removePhoto(photoId)))
+    .then(photo => dispatch(removePhoto(photo)))
 )
 
-export const removePhoto = photoId => ({
+export const removePhoto = photo => ({
   type: REMOVE_PHOTO,
-  photoId
+  photo
 })
 
 export const deleteErrors = () => {

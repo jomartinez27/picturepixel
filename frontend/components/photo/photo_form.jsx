@@ -73,7 +73,10 @@ class PhotoForm extends React.Component {
   render () {
     return (
       <div className="photo-form">
+        <div className="upload-cloud">
         <i id="myBtn" className="material-icons cloud photo-form-icon" onClick={this.handleBtnModal()}>cloud_upload</i>
+          <p>Upload</p>
+        </div>
         <form id="my-Modal" className="modal" onSubmit={this.handleSubmit}>
           <div className="modal-content">
             <span className="close" onClick={this.handleSpanModal()}>&times;</span>

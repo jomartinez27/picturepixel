@@ -28,7 +28,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #71767a;
 }
 
 .photo-profile {
@@ -52,10 +52,15 @@
 
 .photo-list {
   display: block;
-  border: 1px solid black;
+  border: 1px solid #71767a;
   margin: 30px;
 }
 
 .photo-profile-logo {
   margin-left: 20px;
+}
+
+.ul-photo-list {
+  background-color: #FFF;
+  padding: 40px 60px;
 }

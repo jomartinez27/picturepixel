@@ -44,8 +44,10 @@ class Photo extends React.Component {
                   </div>
                   <img className="photo" src={photo.photoUrl}/>
                   <h2 className="photo-footer">{photo.description}</h2>
-                  <DeletePhotoContainer />
-                </li>)}
+                    <div className="delete-container">
+                      <button onClick={() => this.props.deletePhoto(photo.id)}><i className="material-icons">delete_outline</i></button>
+                    </div>
+                  </li>)}
               </div>
             </ul>
           </div>
