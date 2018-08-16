@@ -18,8 +18,11 @@ export const fetchPhoto = id => dispatch => (
 )
 
 export const createPhoto = photo => dispatch => (
-  PhotoUtil.createPhoto(photo)
-    .then(backphoto => dispatch(receivePhoto(backphoto)))
+  PhotoUtil.createPhoto(photo).then(photo => (
+    dispatch(receivePhoto(photo))
+  ), err => (
+    dispatch(receiveErrors(err.responseJSON))
+  ))
 );
 
 export const deletePhoto = photoId => dispatch => (
@@ -36,6 +39,11 @@ export const deleteErrors = () => {
   return dispatch =>
       dispatch({ type: DELETE_PHOTO_ERRORS })
 }
+
+export const receiveErrors = errors => ({
+  type: RECEIVE_PHOTO_ERRORS,
+  errors
+});
 
 export const receivePhoto = photo => {
   return ({

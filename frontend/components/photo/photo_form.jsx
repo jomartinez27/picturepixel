@@ -21,6 +21,25 @@ class PhotoForm extends React.Component {
     this.props.fetchPhotos();
   }
 
+  renderErrors() {
+    const err = document.getElementById("photo-errors")
+    if (this.props.errors.length > 0) {
+      err.className = "render-photo-errors";
+      return (
+        <div className="photo-errors-whole">
+        <div><span className="close-errors" onClick={() => err.className="photo-errors"}>&times;</span></div>
+        <ul>
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      </div>
+      );
+    }
+  }
+
   handleSubmit(e) {
     e.preventDefault();
 
@@ -39,7 +58,7 @@ class PhotoForm extends React.Component {
         description: '',
         photoFile: null,
         photoUrl: null
-      }));
+      }))
     document.getElementById("file").value = ""
   }
 
@@ -85,6 +104,11 @@ class PhotoForm extends React.Component {
         </div>
 
         <div id="my-modal" className="modal">
+          <div className="photo-errors-container">
+            <div id="photo-errors" className="photo-errors">
+              {this.renderErrors()}
+            </div>
+          </div>
           <div className="modal-content">
             <div><span className="close" onClick={this.handleSpanModal()}>&times;</span></div>
 

@@ -1,0 +1,50 @@
+.photo-errors {
+  display: none;
+}
+
+.render-photo-errors {
+  background-color: #F00;
+  color: #FFF;
+  animation-duration: 2s;
+  animation-name: slideFromTop;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  width: 450px;
+  height: 75px;
+}
+
+@keyframes slideFromTop {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.photo-errors-container {
+  display: flex;
+  justify-content: center;
+}
+
+.close-errors {
+  color: #FFF;
+  float: right;
+  font-weight: bold;
+  padding: 8px;
+  font-size: 24px;
+}
+
+.close-errors:hover, .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.photo-errors-whole {
+  width: 100%;
+}
