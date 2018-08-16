@@ -5,9 +5,8 @@
 }
 
 .nav-left {
-  display: inline-block;
-  top: 16px;
-  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .nav-right {
@@ -15,6 +14,13 @@
   justify-content: flex-end;
   align-items: center;
   color: #FFF;
+}
+
+.unsplash-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
 .splash-text {
@@ -27,10 +33,10 @@
 
 
 .logo-splash {
-  display: flex;
   margin-left: 40px;
+  margin-right: 20px;
   border: none;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Press Start 2P', cursive;
   color: #FFF;
 }
 
@@ -130,13 +136,13 @@ nav {
   line-height: 44px;
   font-weight: bold;
   cursor: pointer;
-  width: 116px;
+  width: 170px;
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
   margin: 20px;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Press Start 2P', cursive;
 }
 
 .join-button:hover {
@@ -151,10 +157,7 @@ footer {
 }
 
 .splash-footer-img {
-  display: block;
-  position: relative;
-  top: -20px;
-  left: 56px;
-  height: 75px;
-  width: 75px;
+  margin-top: 4px;
+  height: 40px;
+  width: 40px;
 }
