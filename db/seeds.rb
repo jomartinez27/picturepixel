@@ -14,4 +14,9 @@ ActiveRecord::Base.transaction do
   photo1 = Photo.new(title: 'some pixel art', description: 'a cool photo of a street pixelated', photographer_id: 1)
   photo1.photo.attach(io: File.open("./app/assets/images/cyberpunk-street.png"), filename: "cyberpunk-sreet.png")
   photo1.save!
+
+  photo2 = Photo.new(title: 'some pixel art', description: 'a cool photo of a street pixelated', photographer_id: 1)
+  file = EzDownload.open('https://s3-us-west-1.amazonaws.com/pixelpx-dev/foreground.png')
+  photo2.photo.attach(io: file, filename: 'foreground.png')
+  photo2.save!
 end

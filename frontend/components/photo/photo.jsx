@@ -26,9 +26,6 @@ class Photo extends React.Component {
   }
 
   render () {
-    if (this.state.photos.length === 0) {
-      return "loading"
-    }
     return (
       <div>
         <NavBar />
@@ -44,9 +41,9 @@ class Photo extends React.Component {
                   </div>
                   <img className="photo" src={photo.photoUrl}/>
                   <h2 className="photo-footer">{photo.description}</h2>
-                    <div className="delete-container">
-                      <button onClick={() => this.props.deletePhoto(photo.id)}><i className="material-icons">delete_outline</i></button>
-                    </div>
+                  { photo.photographer_id === this.props.currentUser.id ? <div className="delete-container">
+                    <button onClick={() => this.props.deletePhoto(photo.id)}><i className="material-icons">delete_outline</i></button>
+                  </div> : null }
                   </li>)}
               </div>
             </ul>

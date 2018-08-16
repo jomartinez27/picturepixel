@@ -26,8 +26,11 @@
   cursor: pointer;
 }
 
-.modal {
+#my-modal {
   display: none;
+}
+
+.modal {
   position: fixed;
   z-index: 1;
   left: 0;
@@ -39,12 +42,16 @@
   background-color: rgba(0,0,0,0.4);
 }
 
+
 .modal-content {
   background-color: #FEFEFE;
-  margin: 15% auto;
+  margin: 3.6% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
 }
 
 .close {
@@ -52,6 +59,8 @@
   float: right;
   font-size: 28px;
   font-weight: bold;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .close:hover, .close:focus {
@@ -73,8 +82,117 @@
   display: block;
   position: relative;
   text-align: center;
+  cursor: pointer;
 }
 
 .upload-cloud > p {
   color: aliceblue;
+}
+
+.photo-title-outer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 18px;
+}
+
+.photo-form-title {
+  text-align: center;
+  padding: 12px;
+}
+
+.photo-body-outer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 18px;
+}
+
+.photo-form-body {
+  text-align: center;
+}
+
+textarea {
+  padding-left: 8px;
+  resize: none;
+  height: 200px;
+}
+
+.form-upload-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.post-modal-content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.post-modal-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.post-modal-right {
+  display: flex;
+  flex-direction: row;
+}
+
+.photo-form-btn {
+  padding: 5px;
+  background-color: #34bf49;
+  color: #FFF;
+  position: relative;
+  right: 21px;
+  width: 200px;
+  height: 30px;
+  border-radius: 25px;
+}
+
+.photo-form-btn:hover {
+  background-color: #5fd370;
+}
+
+.inputfile {
+  width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+    color: #FFF;
+    border: 1px solid #0099e5;
+    background-color: #0099e5;
+    border-radius: 20px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    width: 200px;
+    padding: 5px;
+    position: relative;
+    left: 164px;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+  border: 1px solid #00aaff;
+  background-color: #00aaff;
+}
+
+.prev-img {
+  image-rendering: pixelated;
+  max-width: 100%;
+  max-height: 100%;
+  align-self: center;
+}
+
+.prev-img-container {
+  width: 500px;
+  height: 500px;
+  margin-left: 35px;
+  margin-top: 26px;
 }

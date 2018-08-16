@@ -4,9 +4,10 @@ import Photo from './photo';
 import { fetchPhotos, fetchPhoto, deletePhoto } from '../../actions/photo_actions';
 
 const mapStateToProps = state => {
-  return(
-    {photos: Object.values(state.entities.photos)}
-  )
+  return {
+    photos: Object.values(state.entities.photos),
+    currentUser: state.entities.users[state.session.id]
+  }
 }
 
 const mapDispatchToProps = dispatch => ({

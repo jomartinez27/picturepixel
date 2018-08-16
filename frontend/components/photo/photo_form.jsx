@@ -33,9 +33,14 @@ class PhotoForm extends React.Component {
     }
 
     this.props.createPhoto(formData)
-      .then(this.handleSpanModal());
-
-    this.setState({title: '', description: '', photoUrl: null, photoFile: null})
+      .then(this.handleSpanModal())
+      .then(this.setState({
+        title: '',
+        description: '',
+        photoFile: null,
+        photoUrl: null
+      }));
+    document.getElementById("file").value = ""
   }
 
   handleFile(e) {
@@ -58,52 +63,67 @@ class PhotoForm extends React.Component {
 
   handleBtnModal() {
     return () => {
-      const modal = document.getElementById('my-Modal');
+      const modal = document.getElementById('my-modal');
       modal.style.display = 'block';
     }
   }
 
   handleSpanModal() {
     return () => {
-      const modal = document.getElementById('my-Modal')
+      const modal = document.getElementById('my-modal')
       modal.style.display = "none";
     }
   }
 
   render () {
+    const preview = this.state.photoUrl ? <img className="prev-img" src={this.state.photoUrl} /> : null;
     return (
       <div className="photo-form">
-        <div className="upload-cloud">
+        <div className="upload-cloud" onClick={this.handleBtnModal()}>
         <i id="myBtn" className="material-icons cloud photo-form-icon" onClick={this.handleBtnModal()}>cloud_upload</i>
           <p>Upload</p>
         </div>
-        <form id="my-Modal" className="modal" onSubmit={this.handleSubmit}>
+
+        <div id="my-modal" className="modal">
           <div className="modal-content">
             <span className="close" onClick={this.handleSpanModal()}>&times;</span>
 
-          <label className="photo-form-title">Title
-            <input
-              className="photo-input"
-              type="text"
-              value={this.state.title}
-              onChange={this.handleInput('title')}/>
-          </label>
+            <div className="post-modal-content">
+              <div className="post-modal-left">
+                <div className="file-box">
+                  <input type="file" name="file" id="file" className="inputfile" onChange={this.handleFile}/>
+                  <label htmlFor="file">Choose a file</label>
+                </div>
+                <div className="prev-img-container">{preview}</div>
+              </div>
 
-          <label className="photo-form-body">Description
-            <textarea
-              className="photo-input"
-              value={this.state.description}
-              onChange={this.handleInput('description')}>
-            </textarea>
-          </label>
-
-            <input
-              type="file"
-              onChange={this.handleFile}/>
-
-            <button className="photo-form-btn" onClick={this.handleSubmit}>Post a Pic</button>
+              <div className="post-modal-right">
+                <form onSubmit={this.handleSubmit}>
+                  <div className="photo-title-outer">
+                    <label className="photo-form-title"><h3>Title</h3>
+                    <input className="photo-input"
+                      type="text"value={this.state.title}
+                      onChange={this.handleInput('title')}/>
+                    </label>
+                  </div>
+                  <div className="photo-body-outer">
+                    <label className="photo-form-body">
+                      <h3>Description</h3>
+                      <textarea
+                        className="photo-input"
+                        value={this.state.description}
+                        onChange={this.handleInput('description')}>
+                      </textarea>
+                    </label>
+                  </div>
+                  <div className="form-upload-btn"><button className="photo-form-btn" onClick={this.handleSubmit}>Post a Pic</button></div>
+                </form>
+              </div>
+            </div>
           </div>
-        </form>
+
+        </div>
+
       </div>
     )
   }
