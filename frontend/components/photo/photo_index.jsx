@@ -16,7 +16,7 @@ const PhotoIndex = ({photos}) => {
               <p className="photo-title">{photo.title}</p>
             </div>
             <img className="photo" src={photo.photoUrl}/>
-            <h2 className="photo-footer">{photo.description}</h2>
+            <div className="photo-footer">{photo.description}</div>
           </li>)}
         </div>
       </ul>

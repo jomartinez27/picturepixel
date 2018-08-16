@@ -7,17 +7,11 @@
 .photo-container {
   display: flex;
   flex-direction: column-reverse;
-  border-radius: 3px;
-  border: 1px solid #EEE;
-  margin-bottom: 20px;
-  background-color: #FFF;
-  margin: 0 210px;
 }
 
 .photo {
-  padding: 12px;
-  height: 90%;
-  width: 90%;
+  height: 100%;
+  width: 100%;
 }
 
 .photo-header {
@@ -28,6 +22,7 @@
   align-items: center;
   justify-content: flex-start;
   border-bottom: 1px solid #71767a;
+  background-color: #FFF;
 }
 
 .photo-profile {
@@ -45,13 +40,15 @@
 }
 
 .photo-footer {
-  padding: 15px;
+  padding-top: 6px;
+  padding-left: 16px;
+  height: 80px;
   text-align: left;
   border-top: 1px solid #71767a;
+  background-color: #FFF;
 }
 
 .photo-list {
-  display: block;
   border: 1px solid #71767a;
   margin: 30px;
 }
@@ -61,14 +58,12 @@
 }
 
 .ul-photo-list {
-  background-color: #FFF;
-  padding: 40px 60px;
+  padding: 0 60px;
   max-width: 1000px;
 }
 
 .single-photo-container {
   max-width: 516px;
-  border: 1px #71767a;
   display: flex;
   justify-content: center;
 }
@@ -76,8 +71,7 @@
 .delete-container {
   display: flex;
   justify-content: flex-end;
-  padding-right: 20px;
-  padding-bottom: 20px;
+  background-color: #FFF;
 }
 
 .delete-icon {
@@ -88,4 +82,8 @@
 .delete-btn {
   background-color: unset;
   border-color: transparent;
+}
+
+.delete-txt {
+  color: #F00;
 }
