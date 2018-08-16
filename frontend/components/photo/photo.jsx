@@ -39,10 +39,10 @@ class Photo extends React.Component {
                     <div className="photo-profile-logo"><i className="material-icons profile-drop">account_circle</i></div>
                     <p className="photo-title">{photo.title}</p>
                   </div>
-                  <img className="photo" src={photo.photoUrl}/>
+                  <div className="single-photo-container"><img key={photo.id} className="photo" src={photo.photoUrl}/></div>
                   <h2 className="photo-footer">{photo.description}</h2>
                   { photo.photographer_id === this.props.currentUser.id ? <div className="delete-container">
-                    <button onClick={() => this.props.deletePhoto(photo.id)}><i className="material-icons">delete_outline</i></button>
+                    <button className="delete-btn" onClick={() => this.props.deletePhoto(photo.id)}><i className="material-icons delete-icon">delete_outline</i></button>
                   </div> : null }
                   </li>)}
               </div>

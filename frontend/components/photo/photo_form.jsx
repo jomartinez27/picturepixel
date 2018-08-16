@@ -86,7 +86,7 @@ class PhotoForm extends React.Component {
 
         <div id="my-modal" className="modal">
           <div className="modal-content">
-            <span className="close" onClick={this.handleSpanModal()}>&times;</span>
+            <div><span className="close" onClick={this.handleSpanModal()}>&times;</span></div>
 
             <div className="post-modal-content">
               <div className="post-modal-left">
