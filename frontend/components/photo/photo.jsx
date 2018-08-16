@@ -10,13 +10,20 @@ class Photo extends React.Component {
     super(props);
 
     this.state = {
-      photos: this.props.photos
+      photos: this.props.photos,
+      users: this.props.users
     }
 
+    this.userPhoto = this.userPhoto.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchPhotos()
+    this.props.fetchUsers()
+  }
+
+  userPhoto() {
+    this.props.users.map(user => console.log(user.username))
   }
 
   componentWillReceiveProps(newProps){
@@ -36,7 +43,10 @@ class Photo extends React.Component {
                   className="photo-list"
                   key={photo.id}>
                   <div className="photo-header">
-                    <div className="photo-profile-logo"><i className="material-icons profile-drop">account_circle</i></div>
+                    <div className="photo-profile-logo">
+                      <i className="material-icons profile-drop">account_circle</i>
+                      <p>{this.props.users[photo.photographer_id].username}</p>
+                    </div>
                   </div>
                   <div className="single-photo-container"><img key={photo.id} className="photo" src={photo.photoUrl}/></div>
                   <div className="photo-footer">

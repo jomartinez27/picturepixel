@@ -91,15 +91,16 @@ class SessionForm extends React.Component {
     return (
       <div className="session-form-outer">
         <Greeting location={this.props.location} />
+        <div className="session-errors">{this.renderErrors()}</div>
         <div className="full-page-session">
         <div className="session-form-container">
           <div className="form-type-header">{this.formTypeHeader()}</div>
           <div className="session-form-input">
             <form onSubmit={this.handleSubmit} className="form-container">
-              <div className="session-errors">{this.renderErrors()}</div>
 
             <label className="username-email">Username
               <input
+                autoFocus
                 className="signup-input"
                 type="text"
                 value={this.state.username}

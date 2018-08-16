@@ -68,10 +68,9 @@ input:focus {
 
 .session-errors {
   color: #ff4c4c;
-  display: inline-block;
-  bottom: 47px;
-  position: relative;
-  height: 40px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 .username-email {
