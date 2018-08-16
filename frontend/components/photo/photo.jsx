@@ -2,7 +2,7 @@ import React from 'react'
 
 import PhotoIndex from './photo_index';
 import NavBar from '../greeting/nav_bar';
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 import DeletePhotoContainer from './edit_photo_container';
 
 class Photo extends React.Component {
@@ -49,7 +49,9 @@ class Photo extends React.Component {
                   <div className="photo-header">
                     <div className="photo-profile-logo">
                       <i className="material-icons profile-drop">account_circle</i>
-                      <p className="photo-username">{this.props.users[photo.photographer_id].username}</p>
+                      <Link className="user-link" to={`/users/${this.props.users[photo.photographer_id].id}`}>
+                        <p className="photo-username">{this.props.users[photo.photographer_id].username}</p>
+                      </Link>
                     </div>
                   </div>
                   <div className="single-photo-container"><img key={photo.id} className="photo" src={photo.photoUrl}/></div>

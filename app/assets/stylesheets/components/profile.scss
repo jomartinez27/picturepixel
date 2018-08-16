@@ -1,7 +1,8 @@
 .profile {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+  background-color: #FFF;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
 }
 
 .profile-photos-container {
@@ -13,4 +14,28 @@
 
 .profile-photo-list {
   background-color: #FFF;
+}
+
+.user-nav-container {
+  width: 100%;
+}
+
+.profile-body {
+  background: #f7f8fa;
+  padding: 20px 0;
+  position: relative;
+  min-height: 300px;
+}
+
+.profile-photos {
+  margin-top: -10px;
+  padding: 0 40px;
+  min-height: 325px;
+  position: relative;
+}
+
+.grid-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }

@@ -9,7 +9,7 @@ class DemoUser extends React.Component {
 
   handleDemo(e) {
     e.preventDefault();
-    const demoUser = Object.assign({}, {username: 'demo', password: '123456'})
+    const demoUser = Object.assign({}, {username: 'retro', password: '123456'})
     this.props.login(demoUser);
   }
 

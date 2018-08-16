@@ -32,14 +32,20 @@ class User extends React.Component {
     }
     return (
       <div className="profile">
-        <UserNav />
+        <div className="user-nav-container">
+          <UserNav />
+        </div>
+        <div className="profile-body">
+          <div className="profile-photos">
+            <div className="grid-container">
         {this.props.photos.map(photo => photo.photographer_id === parseInt(this.props.match.params.userId) ?
           <li
-            className="photo-list profile-photo-list"
+            className="photo-list"
             key={photo.id}>
             <div className="photo-header">
               <div className="photo-profile-logo">
                 <i className="material-icons profile-drop">account_circle</i>
+                <p className="photo-username">{this.props.user.username}</p>
               </div>
             </div>
             <div className="single-photo-container"><img key={photo.id} className="photo" src={photo.photoUrl}/></div>
@@ -47,15 +53,18 @@ class User extends React.Component {
               <p className="photo-title">{photo.title}</p>
               {photo.description}
             </div>
-            <div className="delete-container">
+            { photo.photographer_id === this.props.currentUser.id ? <div className="delete-container">
               <div><button className="delete-btn" onClick={() => this.props.deletePhoto(photo.id)}>
                 <div className="delete-txt">Delete</div>
                 <i className="material-icons delete-icon">delete_outline</i>
               </button>
             </div>
-            </div>
+            </div> : null }
             </li>
            : null)}
+         </div>
+       </div>
+       </div>
       </div>
     )
   }
