@@ -1,5 +1,6 @@
 class Photo < ApplicationRecord
   validates :title, presence: true
+  validates :description, length: { maximum: 35 }
   validate :ensure_photo
 
   has_one_attached :photo
