@@ -54,7 +54,11 @@
 }
 
 .photo-profile-logo {
-  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 12px;
 }
 
 .ul-photo-list {
@@ -86,4 +90,8 @@
 
 .delete-txt {
   color: #F00;
+}
+
+.photo-username {
+  margin-left: 6px;
 }

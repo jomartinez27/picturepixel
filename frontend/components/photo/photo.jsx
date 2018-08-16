@@ -33,6 +33,10 @@ class Photo extends React.Component {
   }
 
   render () {
+    if (!this.props.users) {
+      return null;
+    }
+
     return (
       <div>
         <NavBar />
@@ -45,7 +49,7 @@ class Photo extends React.Component {
                   <div className="photo-header">
                     <div className="photo-profile-logo">
                       <i className="material-icons profile-drop">account_circle</i>
-                      <p>{this.props.users[photo.photographer_id].username}</p>
+                      <p className="photo-username">{this.props.users[photo.photographer_id].username}</p>
                     </div>
                   </div>
                   <div className="single-photo-container"><img key={photo.id} className="photo" src={photo.photoUrl}/></div>

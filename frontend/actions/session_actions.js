@@ -5,10 +5,21 @@ export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const DELETE_SESSION_ERRORS = 'DELETE_SESSION_ERRORS';
 export const RECEIVE_ALL_USERS = 'RECEIVE_ALL_USERS';
+export const RECEIVE_SINGLE_USER = 'RECEIVE_SINGLE_USER';
 
 export const receiveAllUsers = users => ({
   type: RECEIVE_ALL_USERS,
   users
+})
+
+export const fetchUser = userId => dispatch => (
+  APIUtil.fetchUser(userId)
+    .then(user => dispatch(receiveUser(user)))
+)
+
+export const receiveUser = user => ({
+  type: RECEIVE_SINGLE_USER,
+  user
 })
 
 export const fetchUsers = () => dispatch => (

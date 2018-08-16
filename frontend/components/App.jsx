@@ -12,6 +12,8 @@ import RedirectedContainer from './redirected_container';
 
 import PhotoContainer from './photo/photo_container';
 import UserPhoto from './photo/user_photo';
+import UserContainer from './users/user_container';
+
 
 const mapState = state => ({
   currentUser: state.entities.users[state.session.id]
@@ -23,6 +25,7 @@ const App = () => {
       <Switch>
         <AuthRoute exact path="/login" component={LogInFormContainer} />
         <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+        <ProtectedRoute exact path="/users/:userId" component={UserContainer} />
         <ProtectedRoute exact path="/photos" component={PhotoContainer} />
         <Route exact path="/" component={Splash}/>
         <RedirectedContainer />
