@@ -92,8 +92,93 @@ ActiveRecord::Base.transaction do
   photo13.photo.attach(io: file13, filename: 'alleycats.gif')
   photo13.save!
 
-  photo13 = Photo.new(title: 'Alley cats', description: 'Look at these kitties', photographer_id: 9)
-  file13 = EzDownload.open('https://s3-us-west-1.amazonaws.com/pixelpx-dev/alleycats.gif')
-  photo13.photo.attach(io: file13, filename: 'alleycats.gif')
-  photo13.save!
+  photo14 = Photo.new(title: 'Apartment', description: 'reminds me of my childhood', photographer_id: 12)
+  file14 = EzDownload.open('https://s3-us-west-1.amazonaws.com/pixelpx-dev/apartment.jpg')
+  photo14.photo.attach(io: file14, filename: 'apartment.jpg')
+  photo14.save!
+
+  photo15 = Photo.new(title: 'Arcade', description: 'anybody remember the arcade?', photographer_id: 5)
+  file15 = EzDownload.open('https://s3-us-west-1.amazonaws.com/pixelpx-dev/arcade.gif')
+  photo15.photo.attach(io: file15, filename: 'arcade.gif')
+  photo15.save!
+
+  photo16 = Photo.new(title: 'Bulba', description: 'bulba bulbasaur', photographer_id: 12)
+  file16 = EzDownload.open('https://s3-us-west-1.amazonaws.com/pixelpx-dev/bulba1.png')
+  photo16.photo.attach(io: file16, filename: 'bulba.png')
+  photo16.save!
+
+  photo17 = Photo.new(title: 'coffee time!', description: 'Taking a break', photographer_id: 9)
+  file17 = EzDownload.open('https://s3-us-west-1.amazonaws.com/pixelpx-dev/coffee-break.gif')
+  photo17.photo.attach(io: file17, filename: 'coffee-break.gif')
+  photo17.save!
+
+  photo17 = Photo.new(title: 'coffee time!', description: 'Taking a break', photographer_id: 9)
+  file17 = EzDownload.open('https://s3-us-west-1.amazonaws.com/pixelpx-dev/coffee-break.gif')
+  photo17.photo.attach(io: file17, filename: 'coffee-break.gif')
+  photo17.save!
+
+  photo18 = Photo.new(title: 'Street', description: 'cyberpunk street :)', photographer_id: 8)
+  file18 = EzDownload.open('https://s3-us-west-1.amazonaws.com/pixelpx-dev/cyberpunk-street+copy.png')
+  photo18.photo.attach(io: file18, filename: 'cyberpunk-street.png')
+  photo18.save!
+
+  photo19 = Photo.new(title: 'Dragonballs', description: 'collect all 7', photographer_id: 12)
+  file19 = EzDownload.open('https://s3-us-west-1.amazonaws.com/pixelpx-dev/dragonballs.gif')
+  photo19.photo.attach(io: file19, filename: 'dragonballs.gif')
+  photo19.save!
+
+  photo20 = Photo.new(title: 'Dungeon', description: 'reminds me of zelda', photographer_id: 4)
+  file20 = EzDownload.open('https://s3-us-west-1.amazonaws.com/pixelpx-dev/dungeon.gif')
+  photo20.photo.attach(io: file20, filename: 'dungeon.gif')
+  photo20.save!
+
+  photo21 = Photo.new(title: 'Working hard', description: '*smack*', photographer_id: 6)
+  file21 = EzDownload.open('https://s3-us-west-1.amazonaws.com/pixelpx-dev/dwarf.gif')
+  photo21.photo.attach(io: file21, filename: 'dwarf.gif')
+  photo21.save!
+
+  photo22 = Photo.new(title: 'flying cars', description: '', photographer_id: 8)
+  file22 = EzDownload.open('https://s3-us-west-1.amazonaws.com/pixelpx-dev/flying-cars.gif')
+  photo22.photo.attach(io: file22, filename: 'flying-cars.gif')
+  photo22.save!
+
+  photo23 = Photo.new(title: 'forest', description: 'wanna hike?', photographer_id: 4)
+  file23 = EzDownload.open('https://s3-us-west-1.amazonaws.com/pixelpx-dev/forest.png')
+  photo23.photo.attach(io: file23, filename: 'forest.png')
+  photo23.save!
+
+  photo24 = Photo.new(title: 'Incredibles', description: '*pow*', photographer_id: 2)
+  file24 = EzDownload.open('https://s3-us-west-1.amazonaws.com/pixelpx-dev/incredibles.gif')
+  photo24.photo.attach(io: file24, filename: 'incredibles.gif')
+  photo24.save!
+
+  photo25 = Photo.new(title: 'Coco', description: '...remember me...', photographer_id: 1)
+  file25 = EzDownload.open('https://s3-us-west-1.amazonaws.com/pixelpx-dev/remember-me.gif')
+  photo25.photo.attach(io: file25, filename: 'remember-me.gif')
+  photo25.save!
+
+  photo26 = Photo.new(title: 'suburbs', description: 'at night', photographer_id: 7)
+  file26 = EzDownload.open('https://s3-us-west-1.amazonaws.com/pixelpx-dev/suburbs-night.gif')
+  photo26.photo.attach(io: file26, filename: 'suburbs-night.gif')
+  photo26.save!
+
+  photo27 = Photo.new(title: 'suburbs', description: 'during the day', photographer_id: 7)
+  file27 = EzDownload.open('https://s3-us-west-1.amazonaws.com/pixelpx-dev/suburbs.gif')
+  photo27.photo.attach(io: file27, filename: 'suburbs.gif')
+  photo27.save!
+
+  photo28 = Photo.new(title: 'sunset', description: 'beautiful sunset', photographer_id: 1)
+  file28 = EzDownload.open('https://s3-us-west-1.amazonaws.com/pixelpx-dev/sunset.jpg')
+  photo28.photo.attach(io: file28, filename: 'sunset.jpg')
+  photo28.save!
+
+  photo29 = Photo.new(title: 'westworld', description: 'these violent delights', photographer_id: 3)
+  file29 = EzDownload.open('https://s3-us-west-1.amazonaws.com/pixelpx-dev/westworld.jpg')
+  photo29.photo.attach(io: file29, filename: 'westworld.jpg')
+  photo29.save!
+
+  photo30 = Photo.new(title: 'who are you?', description: '', photographer_id: 13)
+  file30 = EzDownload.open('https://s3-us-west-1.amazonaws.com/pixelpx-dev/who-are-you.gif')
+  photo30.photo.attach(io: file30, filename: 'who-are-you.gif')
+  photo30.save!
 end
