@@ -10,8 +10,8 @@
 }
 
 .photo {
-  height: 100%;
-  width: 100%;
+  height: 500px;
+  width: 500px;
 }
 
 .photo-header {
@@ -37,12 +37,15 @@
   left: 5px;
   position: relative;
   bottom: 2px;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .photo-footer {
+  display: flex;
+  flex-direction: column;
   padding-top: 6px;
   padding-left: 16px;
-  height: 80px;
   text-align: left;
   border-top: 1px solid #71767a;
   background-color: #FFF;
@@ -50,7 +53,8 @@
 
 .photo-list {
   border: 1px solid #71767a;
-  margin: 30px;
+  margin: 30px 6px 0px;
+  background-color: #FFF;
 }
 
 .photo-profile-logo {

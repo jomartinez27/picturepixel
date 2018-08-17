@@ -25,6 +25,14 @@ export const createPhoto = photo => dispatch => (
   ))
 );
 
+export const updatePhoto = photo => dispatch => (
+  PhotoUtil.updatePhoto(photo).then(photo => (
+    dispatch(receivePhoto(photo))
+  ), err => (
+    dispatch(receiveErrors(err.responseJSON))
+  ))
+)
+
 export const deletePhoto = photoId => dispatch => (
   PhotoUtil.deletePhoto(photoId)
     .then(photo => dispatch(removePhoto(photo)))

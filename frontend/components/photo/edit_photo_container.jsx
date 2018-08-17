@@ -1,37 +1,15 @@
-import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { deletePhoto, fetchPhoto } from '../../actions/photo_actions';
+import EditForm from './edit_photo_form';
+import { updatePhoto, fetchPhoto } from '../../actions/photo_actions';
 
-const mapStateToProps = (state, ownProps) => {
-  const photos = Object.values(state.entities.photos)
-  return {
-    photo: photos[ownProps.match.params.photoId]
-  }
-}
+const mapStateToProps = (state, ownProps) => ({
+  photo: state.entities.photos[ownProps.match.params.photoId]
+})
 
-const mapDispatchToProps = dispatch => {
-  return {
-    fetchPhoto: (id) => dispatch(fetchPhoto(id)),
-    deletePhoto: (photoId) => dispatch(deletePhoto(photoId))
-  }
-}
+const mapDispatchToProps = dispatch => ({
+  fetchPhoto: id => dispatch(fetchPhoto(id)),
+  updatePhoto: photo => dispatch(updatePhoto(photo))
+})
 
-class EditPhotoForm extends React.Component {
-  componentWillReceiveProps(nextProps) {
-    if (this.props.photo.id !== nextProps.match.params.photoId) {
-      this.props.fetchPhoto(nextProps.match.params.photoId);
-    }
-  }
-
-  render () {
-    const { deletePhoto, photo} = this.props;
-    return (
-      <div className="delete-container">
-        <button onClick={() => deletePhoto(photo.id)}><i className="material-icons">delete_outline</i></button>
-      </div>
-    )
-  }
-}
-
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(EditPhotoForm))
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(EditForm))

@@ -5,6 +5,16 @@ class Api::PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
   end
 
+  def update
+    @photo = Photo.find(params[:id])
+
+    if @photo.update(photo_params)
+      render "api/photos/show"
+    else
+      render json: @photo.errors.full_messages
+    end
+  end
+
   def index
     @photos = Photo.all
     render :index

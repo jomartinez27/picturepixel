@@ -22,20 +22,22 @@
 
 .profile-body {
   background: #f7f8fa;
-  padding: 20px 0;
-  position: relative;
-  min-height: 300px;
 }
 
 .profile-photos {
-  margin-top: -10px;
-  padding: 0 40px;
-  min-height: 325px;
-  position: relative;
+  // margin-top: -10px;
+  // padding: 0 40px;
+  // min-height: 325px;
+  // position: relative;
 }
 
 .grid-container {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.profile-pic {
+  height: 500px;
+  width: 500px;
 }

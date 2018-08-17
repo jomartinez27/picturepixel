@@ -1,11 +1,19 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import UserNav from './user_nav_container';
+import EditFormContainer from '../photo/edit_photo_container';
 
 
 class User extends React.Component {
   constructor(props) {
     super(props);
+
+    this.props.photos.map(photo => (
+      this.state = {
+        title: photo.title,
+        description: photo.description
+      }
+    ))
   }
 
 
@@ -21,15 +29,36 @@ class User extends React.Component {
     }
   }
 
+  update(field) {
+    return e => {
+      this.setState({[field]: e.target.value})
+    }
+  }
+
+  handleUpdate() {
+    return (
+      <div className="edit-form-container">
+        <form className="edit-form" onSubmit={this.handleSubmit}>
+          <label className="photo-form-title"><h3>Title</h3>
+          <input className="photo-input"
+            type="text" value={this.props.photos[this.props.match.params.userId]}
+            onChange={this.update('title')}/>
+          </label>
+        </form>
+      </div>
+    )
+  }
+
 
   render () {
     if (this.props.photos.length === 0) {
       return (
         <div>
-          <h1>No pics</h1>
+          <h1>Loading</h1>
         </div>
       )
     }
+
     return (
       <div className="profile">
         <div className="user-nav-container">
@@ -42,6 +71,7 @@ class User extends React.Component {
           <li
             className="photo-list"
             key={photo.id}>
+            <div className="outer-photo-container">
             <div className="photo-header">
               <div className="photo-profile-logo">
                 <i className="material-icons profile-drop">account_circle</i>
@@ -51,7 +81,7 @@ class User extends React.Component {
             <div className="single-photo-container"><img key={photo.id} className="photo" src={photo.photoUrl}/></div>
             <div className="photo-footer">
               <p className="photo-title">{photo.title}</p>
-              {photo.description}
+              <div className="photo-description">{photo.description}</div>
             </div>
             { photo.photographer_id === this.props.currentUser.id ? <div className="delete-container">
               <div><button className="delete-btn" onClick={() => this.props.deletePhoto(photo.id)}>
@@ -59,7 +89,9 @@ class User extends React.Component {
                 <i className="material-icons delete-icon">delete_outline</i>
               </button>
             </div>
+
             </div> : null }
+          </div>
             </li>
            : null)}
          </div>
@@ -71,3 +103,48 @@ class User extends React.Component {
 }
 
 export default User;
+
+
+
+
+
+
+
+
+//
+// <div className="profile">
+//   <div className="user-nav-container">
+//     <UserNav />
+//   </div>
+//   <div className="profile-body">
+//     <div className="profile-photos">
+//       <div className="grid-container">
+//   {this.props.photos.map(photo => photo.photographer_id === parseInt(this.props.match.params.userId) ?
+//     <li
+//       className="photo-list"
+//       key={photo.id}>
+//       <div className="photo-header">
+//         <div className="photo-profile-logo">
+//           <i className="material-icons profile-drop">account_circle</i>
+//           <p className="photo-username">{this.props.user.username}</p>
+//         </div>
+//       </div>
+//       <div className="single-photo-container"><img key={photo.id} className="photo" src={photo.photoUrl}/></div>
+//       <div className="photo-footer">
+//         <p className="photo-title">{photo.title}</p>
+//         <div className="photo-description">{photo.description}</div>
+//       </div>
+//       { photo.photographer_id === this.props.currentUser.id ? <div className="delete-container">
+//         <div><button className="delete-btn" onClick={() => this.props.deletePhoto(photo.id)}>
+//           <div className="delete-txt">Delete</div>
+//           <i className="material-icons delete-icon">delete_outline</i>
+//         </button>
+//       </div>
+//
+//       </div> : null }
+//       </li>
+//      : null)}
+//    </div>
+//  </div>
+//  </div>
+// </div>

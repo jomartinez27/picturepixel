@@ -3,7 +3,7 @@ import React from 'react'
 import PhotoIndex from './photo_index';
 import NavBar from '../greeting/nav_bar';
 import { withRouter, Link } from 'react-router-dom'
-import DeletePhotoContainer from './edit_photo_container';
+import EditPhotoContainer from './edit_photo_container';
 
 class Photo extends React.Component {
   constructor(props) {
