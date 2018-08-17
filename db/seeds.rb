@@ -81,4 +81,19 @@ ActiveRecord::Base.transaction do
   file11 = EzDownload.open('https://s3-us-west-1.amazonaws.com/pixelpx-dev/windy.gif')
   photo11.photo.attach(io: file11, filename: 'windy.gif')
   photo11.save!
+
+  photo12 = Photo.new(title: 'airplane', description: 'A airplane flies by', photographer_id: 7)
+  file12 = EzDownload.open('https://s3-us-west-1.amazonaws.com/pixelpx-dev/airplane.gif')
+  photo12.photo.attach(io: file12, filename: 'airplane.gif')
+  photo12.save!
+
+  photo13 = Photo.new(title: 'Alley cats', description: 'Look at these kitties', photographer_id: 9)
+  file13 = EzDownload.open('https://s3-us-west-1.amazonaws.com/pixelpx-dev/alleycats.gif')
+  photo13.photo.attach(io: file13, filename: 'alleycats.gif')
+  photo13.save!
+
+  photo13 = Photo.new(title: 'Alley cats', description: 'Look at these kitties', photographer_id: 9)
+  file13 = EzDownload.open('https://s3-us-west-1.amazonaws.com/pixelpx-dev/alleycats.gif')
+  photo13.photo.attach(io: file13, filename: 'alleycats.gif')
+  photo13.save!
 end
