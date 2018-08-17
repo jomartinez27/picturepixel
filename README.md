@@ -15,11 +15,14 @@ PicturePixel is a site where users can upload pixel images with other users. On 
 ## Features
 ### HomeFeed
 ![Home Feed](app/assets/images/giphy.gif)
+
 Logged in users can scroll and view images uploaded by other users
 
 ### Upload
 Logged in users can upload images
 ![Upload functionality](app/assets/images/upload_function.png)
+
+
 
 Some of the functionality I implemented in order for a modal to display if a user clicks on the upload button. Using a some Javascript I was able to change the CSS style of each the modal div. If a user clicks on the "x" the modal will disappear. Building the modal was tricky at first, but after some thinking I realized I can use a little jQuery to help me!
 ```javascript
