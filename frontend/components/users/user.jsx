@@ -54,7 +54,7 @@ class User extends React.Component {
     if (this.props.photos.length === 0) {
       return (
         <div>
-          <h1>Loading</h1>
+          <UserNav />
         </div>
       )
     }
