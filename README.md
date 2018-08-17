@@ -4,7 +4,7 @@ You can find my site on:
 [Live Demo](https://picturepixel.herokuapp.com/#/)
 
 ## About
-PicturePixel is a site where users can upload pixel images with other users. On login users are sent to home feed, where all images appear but they can click other users usernames and checkout their profile and respective images.
+PicturePixel is a site where users can upload pixel images with other users. On login users are sent to home feed where all images appear. They then can click other users usernames and be redirected to that user's profile.
 
 ## Technology Used
 * Ruby on Rails for backend
@@ -24,7 +24,7 @@ Logged in users can upload images
 
 
 
-Some of the functionality I implemented in order for a modal to display if a user clicks on the upload button. Using a some Javascript I was able to change the CSS style of each the modal div. If a user clicks on the "x" the modal will disappear. Building the modal was tricky at first, but after some thinking I realized I can use a little jQuery to help me!
+Using some JavaScript I was able to change the CSS style of the div that had the id `my-modal`. If a user clicks on the "x" the modal will disappear. Building the modal was tricky at first, but after some thinking I realized I can use a little jQuery to help me!
 ```javascript
   handleBtnModal() {
     return () => {
@@ -76,7 +76,6 @@ The image is styled using:
 This style was chosen in order to make the design responsive to the window screen. If a user is on a smaller screen the images will stack ontop of another to have the scrolling effect on a phone.
 ![images](app/assets/images/profile_scroll.gif)
 
-
-# Future Functionalities
+# Future Features
 * Follow feature
 * Comment/Like on another image
