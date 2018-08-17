@@ -23,7 +23,6 @@ class Photo extends React.Component {
   }
 
   userPhoto() {
-    this.props.users.map(user => console.log(user.username))
   }
 
   componentWillReceiveProps(newProps){
