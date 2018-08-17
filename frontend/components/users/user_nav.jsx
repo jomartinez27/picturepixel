@@ -7,6 +7,7 @@ class UserNav extends React.Component {
     return (
       <div className="navbar-container">
         <PersistLogoContainer />
+        <h3>{this.props.user.username}</h3>
         <div className="nav-right-second">
           <Logout />
         </div>

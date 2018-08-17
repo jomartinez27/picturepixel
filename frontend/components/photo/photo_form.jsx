@@ -95,7 +95,7 @@ class PhotoForm extends React.Component {
   }
 
   render () {
-    const preview = this.state.photoUrl ? <img className="prev-img" src={this.state.photoUrl} /> : null;
+    const preview = this.state.photoUrl ? <img className="prev-img" src={this.state.photoUrl} /> : <img className="prev-img" src={window.images.place} />;
     return (
       <div className="photo-form">
         <div className="upload-cloud" onClick={this.handleBtnModal()}>

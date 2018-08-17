@@ -135,6 +135,7 @@ textarea {
 .post-modal-right {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .photo-form-btn {
@@ -195,4 +196,5 @@ textarea {
   width: 500px;
   height: 500px;
   margin-left: 35px;
+  padding-top: 14px;
 }

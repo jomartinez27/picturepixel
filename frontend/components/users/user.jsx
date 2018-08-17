@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
-import UserNav from './user_nav';
+import UserNav from './user_nav_container';
 
 
 class User extends React.Component {
