@@ -76,6 +76,11 @@ The image is styled using:
 This style was chosen in order to make the design responsive to the window screen. If a user is on a smaller screen the images will stack ontop of another to have the scrolling effect on a phone.
 ![images](app/assets/images/profile_scroll.gif)
 
+## Other Features
+* Frontend/Backend Auth
+* AWS used for uploading
+* Jbuilder to fetch data from backend
+
 # Future Features
 * Follow feature
 * Comment/Like on another image
