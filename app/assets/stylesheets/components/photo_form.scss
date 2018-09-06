@@ -74,6 +74,9 @@
   height: 50px;
   background-color: #FFF;
   width: 100%;
+  position: fixed;
+  overflow: hidden;
+  z-index: 1;
 }
 
 .upload-cloud {
