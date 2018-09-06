@@ -96,10 +96,11 @@ class PhotoForm extends React.Component {
 
   render () {
     const preview = this.state.photoUrl ? <img className="prev-img" src={this.state.photoUrl} /> : <img className="prev-img" src={window.images.place} />;
-    return (
-      <div className="photo-form">
+    return <div className="photo-form">
         <div className="upload-cloud" onClick={this.handleBtnModal()}>
-        <i id="myBtn" className="material-icons cloud photo-form-icon" onClick={this.handleBtnModal()}>cloud_upload</i>
+          <i id="myBtn" className="material-icons cloud photo-form-icon" onClick={this.handleBtnModal()}>
+            cloud_upload
+          </i>
           <p>Upload</p>
         </div>
 
@@ -110,12 +111,16 @@ class PhotoForm extends React.Component {
             </div>
           </div>
           <div className="modal-content">
-            <div><span className="close" onClick={this.handleSpanModal()}>&times;</span></div>
+            <div>
+              <span className="close" onClick={this.handleSpanModal()}>
+                &times;
+              </span>
+            </div>
 
             <div className="post-modal-content">
               <div className="post-modal-left">
                 <div className="file-box">
-                  <input type="file" name="file" id="file" className="inputfile" onChange={this.handleFile}/>
+                  <input type="file" name="file" id="file" className="inputfile" onChange={this.handleFile} accept="image/x-png,image/gif,image/jpeg" />
                   <label htmlFor="file">Choose a file</label>
                 </div>
                 <div className="prev-img-container">{preview}</div>
@@ -124,32 +129,28 @@ class PhotoForm extends React.Component {
               <div className="post-modal-right">
                 <form onSubmit={this.handleSubmit}>
                   <div className="photo-title-outer">
-                    <label className="photo-form-title"><h3>Title</h3>
-                    <input className="photo-input"
-                      type="text"value={this.state.title}
-                      onChange={this.handleInput('title')}/>
+                    <label className="photo-form-title">
+                      <h3>Title</h3>
+                      <input className="photo-input" type="text" value={this.state.title} onChange={this.handleInput("title")} />
                     </label>
                   </div>
                   <div className="photo-body-outer">
                     <label className="photo-form-body">
                       <h3>Description</h3>
-                      <textarea
-                        className="photo-input"
-                        value={this.state.description}
-                        onChange={this.handleInput('description')}>
-                      </textarea>
+                      <textarea className="photo-input" value={this.state.description} onChange={this.handleInput("description")} />
                     </label>
                   </div>
-                  <div className="form-upload-btn"><button className="photo-form-btn" onClick={this.handleSubmit}>Post a Pic</button></div>
+                  <div className="form-upload-btn">
+                    <button className="photo-form-btn" onClick={this.handleSubmit}>
+                      Post a Pic
+                    </button>
+                  </div>
                 </form>
               </div>
             </div>
           </div>
-
         </div>
-
-      </div>
-    )
+      </div>;
   }
 }
 
