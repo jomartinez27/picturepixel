@@ -8,6 +8,8 @@
 .photo-container {
   display: flex;
   flex-direction: column-reverse;
+  position: relative;
+  top: 40px;
 }
 
 .photo {
@@ -24,8 +26,6 @@
   justify-content: flex-start;
   border-bottom: 1px solid #71767a;
   background-color: #FFF;
-  position: relative;
-  top: 40px;
 }
 
 .photo-profile {
@@ -47,8 +47,7 @@
 .photo-footer {
   display: flex;
   flex-direction: column;
-  padding-top: 6px;
-  padding-left: 16px;
+  padding: 6px 0px 12px 16px;
   text-align: left;
   border-top: 1px solid #71767a;
   background-color: #FFF;

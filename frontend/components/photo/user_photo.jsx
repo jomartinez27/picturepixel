@@ -1,11 +1,11 @@
-import React from 'react';
+// import React from 'react';
 
-class UserPhotos extends React.Component {
-  render () {
-    return (
-      <div>Hello</div>
-    )
-  }
-}
+// class UserPhotos extends React.Component {
+//   render () {
+//     return (
+//       <div>Hello</div>
+//     )
+//   }
+// }
 
-export default UserPhotos;
+// export default UserPhotos;

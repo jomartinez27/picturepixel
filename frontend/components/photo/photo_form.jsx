@@ -90,7 +90,9 @@ class PhotoForm extends React.Component {
   handleSpanModal() {
     return () => {
       const modal = document.getElementById('my-modal')
+      const err = document.getElementById("photo-errors")
       modal.style.display = "none";
+      err.style.display = "none";
     }
   }
 

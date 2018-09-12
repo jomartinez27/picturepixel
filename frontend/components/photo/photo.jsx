@@ -13,16 +13,11 @@ class Photo extends React.Component {
       photos: this.props.photos,
       users: this.props.users
     }
-
-    this.userPhoto = this.userPhoto.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchPhotos()
     this.props.fetchUsers()
-  }
-
-  userPhoto() {
   }
 
   componentWillReceiveProps(newProps){
