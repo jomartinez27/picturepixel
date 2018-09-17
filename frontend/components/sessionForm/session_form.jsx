@@ -93,6 +93,7 @@ class SessionForm extends React.Component {
       <div className="session-form-outer">
         <Greeting location={this.props.location} />
         <div className="full-page-session">
+        <div className="session-errors">{this.renderErrors()}</div>
         <div className="session-form-container">
           <div className="form-type-header">{this.formTypeHeader()}</div>
           <div className="session-form-input">
