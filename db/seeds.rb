@@ -112,11 +112,6 @@ ActiveRecord::Base.transaction do
   photo17.photo.attach(io: file17, filename: 'coffee-break.gif')
   photo17.save!
 
-  photo17 = Photo.new(title: 'coffee time!', description: 'Taking a break', photographer_id: 9)
-  file17 = EzDownload.open('https://s3-us-west-1.amazonaws.com/pixelpx-dev/coffee-break.gif')
-  photo17.photo.attach(io: file17, filename: 'coffee-break.gif')
-  photo17.save!
-
   photo18 = Photo.new(title: 'Street', description: 'cyberpunk street :)', photographer_id: 8)
   file18 = EzDownload.open('https://s3-us-west-1.amazonaws.com/pixelpx-dev/cyberpunk-street+copy.png')
   photo18.photo.attach(io: file18, filename: 'cyberpunk-street.png')
