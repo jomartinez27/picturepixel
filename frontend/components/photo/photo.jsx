@@ -14,7 +14,7 @@ class Photo extends React.Component {
       users: this.props.users
     }
 
-    this.handleDelete = this.handleDelete.bind(this);
+    this.displayModal = this.displayModal.bind(this);
   }
 
   componentDidMount() {
@@ -28,10 +28,17 @@ class Photo extends React.Component {
     }
   }
 
-  handleDelete() {
+  displayModal() {
     return () => {
       const modal = document.getElementById("delete-modal")
       modal.style.display = "block"
+    }
+  }
+
+  removeModal() {
+    return () => {
+      const modal = document.getElementById("delete-modal");
+      modal.style.display = "none"
     }
   }
 
@@ -67,13 +74,13 @@ class Photo extends React.Component {
                     <div className="delete-modal-content">
                       <h3>Are you sure you want to delete?</h3>
                       <div className="delete-buttons">
-                      <button>Yes</button>
-                      <button>No</button>
+                      <button onClick={() => this.props.deletePhoto(photo.id)}>Yes</button>
+                      <button onClick={this.removeModal()}>No</button>
                       </div>
                     </div>
                   </div>
                   { photo.photographer_id === this.props.currentUser.id ? <div className="delete-container">
-                    <div><button className="delete-btn" onClick={this.handleDelete()}>
+                    <div><button className="delete-btn" onClick={this.displayModal()}>
                       <div className="delete-txt">Delete</div>
                       <i className="material-icons delete-icon">delete_outline</i>
                     </button>
