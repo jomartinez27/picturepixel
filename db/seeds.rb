@@ -107,7 +107,7 @@ ActiveRecord::Base.transaction do
   photo16.photo.attach(io: file16, filename: 'bulba.png')
   photo16.save!
 
-  photo17 = Photo.new(title: 'coffee time!', description: 'Taking a break', photographer_id: 9)
+  photo17 = Photo.new(title: 'coffee time!', description: 'Taking a break', photographer_id: 3)
   file17 = EzDownload.open('https://s3-us-west-1.amazonaws.com/pixelpx-dev/coffee-break.gif')
   photo17.photo.attach(io: file17, filename: 'coffee-break.gif')
   photo17.save!
@@ -132,7 +132,7 @@ ActiveRecord::Base.transaction do
   photo21.photo.attach(io: file21, filename: 'dwarf.gif')
   photo21.save!
 
-  photo22 = Photo.new(title: 'flying cars', description: '', photographer_id: 8)
+  photo22 = Photo.new(title: 'flying cars', description: '', photographer_id: 3)
   file22 = EzDownload.open('https://s3-us-west-1.amazonaws.com/pixelpx-dev/flying-cars.gif')
   photo22.photo.attach(io: file22, filename: 'flying-cars.gif')
   photo22.save!

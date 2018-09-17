@@ -14,7 +14,6 @@ class Photo extends React.Component {
       users: this.props.users
     }
 
-    this.displayModal = this.displayModal.bind(this);
   }
 
   componentDidMount() {
