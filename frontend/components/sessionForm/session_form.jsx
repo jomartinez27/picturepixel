@@ -88,7 +88,6 @@ class SessionForm extends React.Component {
   }
 
   render () {
-    console.log(this.props.errors)
     return (
       <div className="session-form-outer">
         <Greeting location={this.props.location} />
