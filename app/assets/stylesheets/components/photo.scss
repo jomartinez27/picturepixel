@@ -101,3 +101,28 @@
   margin-left: 6px;
   font-family: 'Press Start 2P', cursive;
 }
+
+.confirm-yes {
+  padding: 6px;
+  border: 1px solid #34bf49;
+  background-color: #34bf49;
+  color: #fff;
+  cursor: pointer;
+  margin: 18px;
+}
+
+.confirm-yes:hover {
+  background-color: #5fd370;
+}
+
+.confirm-no {
+  padding: 6px;
+  border: 1px solid #F00;
+  background-color: #F00;
+  color: #FFF;
+  cursor: pointer;
+}
+
+.confirm-no:hover {
+  background-color: #ff3333;
+}

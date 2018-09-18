@@ -101,8 +101,8 @@ class User extends React.Component {
               <div className="delete-modal-content">
               <h3>Are you sure you want to delete?</h3>
                 <div className="delete-buttons">
-                  <button onClick={() => this.props.deletePhoto(photo.id)}>Yes</button>
-                  <button onClick={this.removeModal()}>No</button>
+                  <button className="confirm-yes" onClick={() => this.props.deletePhoto(photo.id)}>Yes</button>
+                  <button className="confirm-no" onClick={this.removeModal()}>No</button>
                   </div>
                 </div>
               </div>
