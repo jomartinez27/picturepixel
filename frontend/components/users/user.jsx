@@ -83,7 +83,7 @@ class User extends React.Component {
             <div className="grid-container">
         {this.props.photos.map(photo => photo.photographer_id === parseInt(this.props.match.params.userId) ?
           <li
-            className="photo-list"
+            className="photo-list photo-list-prof"
             key={photo.id}>
             <div className="outer-photo-container">
             <div className="photo-header">
@@ -92,7 +92,7 @@ class User extends React.Component {
                 <p className="photo-username">{this.props.user.username}</p>
               </div>
             </div>
-            <div className="single-photo-container"><img key={photo.id} className="photo" src={photo.photoUrl}/></div>
+            <div className="single-photo-container"><img key={photo.id} className="photo user-photo-prof" src={photo.photoUrl}/></div>
             <div className="photo-footer">
               <p className="photo-title">{photo.title}</p>
               <div className="photo-description">{photo.description}</div>
