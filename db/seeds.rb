@@ -31,7 +31,7 @@ ActiveRecord::Base.transaction do
   photo1.photo.attach(io: file1, filename: 'foreground.png')
   photo1.save!
 
-  photo2 = Photo.new(title: 'Rainy', description: 'rainy gif', photographer_id: 15)
+  photo2 = Photo.new(title: 'Rainy', description: 'rainy gif', photographer_id: 3)
   file2 = EzDownload.open('https://s3-us-west-1.amazonaws.com/pixelpx-dev/nature-rain.gif')
   photo2.photo.attach(io: file2, filename: 'nature-rain.gif')
   photo2.save!
@@ -47,7 +47,7 @@ ActiveRecord::Base.transaction do
   photo4.photo.attach(io: file4, filename: 'rain.gif')
   photo4.save!
 
-  photo5 = Photo.new(title: 'Shovel-Knight', description: '', photographer_id: 10)
+  photo5 = Photo.new(title: 'Shovel-Knight', description: '', photographer_id: 3)
   file5 = EzDownload.open('https://s3-us-west-1.amazonaws.com/pixelpx-dev/shovel-knight.jpg')
   photo5.photo.attach(io: file5, filename: 'rain.gif')
   photo5.save!
@@ -82,7 +82,7 @@ ActiveRecord::Base.transaction do
   photo11.photo.attach(io: file11, filename: 'windy.gif')
   photo11.save!
 
-  photo12 = Photo.new(title: 'airplane', description: 'A airplane flies by', photographer_id: 7)
+  photo12 = Photo.new(title: 'airplane', description: 'A airplane flies by', photographer_id: 3)
   file12 = EzDownload.open('https://s3-us-west-1.amazonaws.com/pixelpx-dev/airplane.gif')
   photo12.photo.attach(io: file12, filename: 'airplane.gif')
   photo12.save!
@@ -102,7 +102,7 @@ ActiveRecord::Base.transaction do
   photo15.photo.attach(io: file15, filename: 'arcade.gif')
   photo15.save!
 
-  photo16 = Photo.new(title: 'Bulba', description: 'bulba bulbasaur', photographer_id: 12)
+  photo16 = Photo.new(title: 'Bulba', description: 'bulba bulbasaur', photographer_id: 3)
   file16 = EzDownload.open('https://s3-us-west-1.amazonaws.com/pixelpx-dev/bulba1.png')
   photo16.photo.attach(io: file16, filename: 'bulba.png')
   photo16.save!
@@ -122,7 +122,7 @@ ActiveRecord::Base.transaction do
   photo19.photo.attach(io: file19, filename: 'dragonballs.gif')
   photo19.save!
 
-  photo20 = Photo.new(title: 'Dungeon', description: 'reminds me of zelda', photographer_id: 4)
+  photo20 = Photo.new(title: 'Dungeon', description: 'reminds me of zelda', photographer_id: 3)
   file20 = EzDownload.open('https://s3-us-west-1.amazonaws.com/pixelpx-dev/dungeon.gif')
   photo20.photo.attach(io: file20, filename: 'dungeon.gif')
   photo20.save!
@@ -152,7 +152,7 @@ ActiveRecord::Base.transaction do
   photo25.photo.attach(io: file25, filename: 'remember-me.gif')
   photo25.save!
 
-  photo26 = Photo.new(title: 'suburbs', description: 'at night', photographer_id: 7)
+  photo26 = Photo.new(title: 'suburbs', description: 'at night', photographer_id: 3)
   file26 = EzDownload.open('https://s3-us-west-1.amazonaws.com/pixelpx-dev/suburbs-night.gif')
   photo26.photo.attach(io: file26, filename: 'suburbs-night.gif')
   photo26.save!
