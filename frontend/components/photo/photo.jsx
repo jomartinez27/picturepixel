@@ -43,7 +43,6 @@ class Photo extends React.Component {
   }
 
   render () {
-    console.log(this.props)
     if (!this.props.users) {
       return null;
     }
