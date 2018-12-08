@@ -4,12 +4,8 @@ import { Link } from 'react-router-dom';
 const Logout = ({ currentUser, logout }) => {
   if (currentUser) {
     return (
-      <div className="dropdown">
-        <i className="material-icons profile-drop">account_circle</i>
-        <div id="dropdown-content" className="dropdown-content">
-          <Link className="profile-drop" to={`/users/${currentUser.id}`}><button>MyProfile</button></Link>
-          <button onClick={logout} className="logout-button">Logout</button>
-        </div>
+      <div>
+          <p onClick={logout} className="logout-button">Logout</p>
       </div>
     )
   } else {

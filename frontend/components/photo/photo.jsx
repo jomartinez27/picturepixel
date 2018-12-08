@@ -4,7 +4,7 @@ import PhotoIndex from './photo_index';
 import NavBar from '../greeting/nav_bar';
 import { withRouter, Link } from 'react-router-dom'
 import EditPhotoContainer from './edit_photo_container';
-import { Grid, Row, Col, Image } from 'react-bootstrap';
+import { Grid, Row, Col, Image, Navbar, Nav, NavItem } from 'react-bootstrap';
 
 class Photo extends React.Component {
   constructor(props) {
@@ -43,23 +43,35 @@ class Photo extends React.Component {
   }
 
   render () {
+    console.log(this.props)
     if (!this.props.users) {
       return null;
     }
     return (
       <div>
+        <div>
+          <NavBar currentUser={this.props.currentUser}/>
+        </div>
         <Grid>
           <Row>
             <Col xs={12}>
               {this.state.photos.reverse().map(photo => <li key={photo.id}>
                 <div className="container photo-container">
                   <div className="photo-header">
-                    <i className="material-icons profile-drop">account_circle</i>
-                    <Link className="user-link" to={`/users/${this.props.users[photo.photographer_id].id}`}>
-                      <p className="photo-title">{this.props.users[photo.photographer_id].username}</p>
-                    </Link>
+                    <div className="photo-profile-logo">
+                      <i className="material-icons profile-drop">account_circle</i>
+                      <Link className="user-link" to={`/users/${this.props.users[photo.photographer_id].id}`}>
+                        <p className="photo-username">{this.props.users[photo.photographer_id].username}</p>
+                      </Link>
+                    </div>
                   </div>
-                  <Image src={photo.photoUrl} responsive />
+                  <Link to={`/users/${this.props.users[photo.photographer_id].id}`}>
+                    <Image src={photo.photoUrl} responsive />
+                  </Link>
+                  <div className="photo-footer">
+                    <p className="photo-title">{photo.title}</p>
+                    {photo.description}
+                  </div>
                 </div>
               </li>)}
             </Col>
