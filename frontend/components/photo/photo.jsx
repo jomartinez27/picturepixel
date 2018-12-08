@@ -52,7 +52,13 @@ class Photo extends React.Component {
           <Row>
             <Col xs={12}>
               {this.state.photos.reverse().map(photo => <li key={photo.id}>
-                <div className="container">
+                <div className="container photo-container">
+                  <div className="photo-header">
+                    <i className="material-icons profile-drop">account_circle</i>
+                    <Link className="user-link" to={`/users/${this.props.users[photo.photographer_id].id}`}>
+                      <p className="photo-title">{this.props.users[photo.photographer_id].username}</p>
+                    </Link>
+                  </div>
                   <Image src={photo.photoUrl} responsive />
                 </div>
               </li>)}

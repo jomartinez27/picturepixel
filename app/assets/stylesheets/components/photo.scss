@@ -6,10 +6,12 @@
 }
 
 .photo-container {
+  margin: 1em;
+  border: 1px solid black;
   display: flex;
-  flex-direction: column-reverse;
-  position: relative;
-  top: 40px;
+  justify-content: center;
+  width: fit-content !important;
+  flex-direction: column;
 }
 
 .photo {
