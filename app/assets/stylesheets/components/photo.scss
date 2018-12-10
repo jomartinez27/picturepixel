@@ -5,6 +5,17 @@
   margin-bottom: 40px;
 }
 
+.photo-index-container {
+  background-color: #f7f8fa !important;
+  width: auto !important;
+}
+
+.phot-index-row {
+  display: flex !important;
+  flex-direction: column-reverse !important;
+  margin-top: 5em;
+}
+
 .photo-container {
   margin: 1em;
   border: 1px solid gray;
@@ -12,6 +23,7 @@
   justify-content: center;
   width: fit-content !important;
   flex-direction: column;
+  background-color: #fff;
 }
 
 .photo {

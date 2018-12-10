@@ -49,12 +49,12 @@ class Photo extends React.Component {
     return (
       <div>
         <div>
-          <NavBar currentUser={this.props.currentUser}/>
+          <NavBar />
         </div>
-        <Grid>
+        <Grid className="photo-index-container">
           <Row>
-            <Col xs={12}>
-              {this.state.photos.reverse().map(photo => <li key={photo.id}>
+            <Col xs={12} className="phot-index-row">
+              {this.state.photos.map(photo => <li key={photo.id}>
                 <div className="container photo-container">
                   <div className="photo-header">
                     <div className="photo-profile-logo">

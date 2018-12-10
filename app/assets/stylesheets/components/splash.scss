@@ -1,3 +1,7 @@
+.main-div {
+  background-color: transparent !important;
+}
+
 .main-nav {
   display: flex;
   justify-content: space-between;
@@ -75,7 +79,6 @@ div .button {
   border-radius: 30px;
   padding: 5px 15px;
   margin: 10px 25px 10px 30px;
-  width: 66px;
   color: #FFF;
 }
 
@@ -136,7 +139,6 @@ nav {
   line-height: 44px;
   font-weight: bold;
   cursor: pointer;
-  width: 170px;
   display: flex;
   justify-content: center;
   align-items: center;
