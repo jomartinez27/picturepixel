@@ -2,6 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import UserNav from './user_nav_container';
 import EditFormContainer from '../photo/edit_photo_container';
+import { Image } from 'react-bootstrap';
 
 
 class User extends React.Component {
@@ -92,7 +93,7 @@ class User extends React.Component {
                 <p className="photo-username">{this.props.user.username}</p>
               </div>
             </div>
-            <div className="single-photo-container"><img key={photo.id} className="photo user-photo-prof" src={photo.photoUrl}/></div>
+            <div className="single-photo-container"><Image responsive key={photo.id} className="photo user-photo-prof" src={photo.photoUrl}/></div>
             <div className="photo-footer">
               <p className="photo-title">{photo.title}</p>
               <div className="photo-description">{photo.description}</div>
