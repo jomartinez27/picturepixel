@@ -1,0 +1,93 @@
+.session-page {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(#f7f8fa, #f7f8fa);
+  background-size: cover;
+}
+
+.form-group {
+  margin: 2px !important;
+}
+
+.session-container {
+  border: 1px solid;
+  width: 400px !important;
+  padding: 40px;
+  height: 500px;
+  margin-top: 6em;
+  background: #FFF;
+}
+
+.session-label {
+  display: flex;
+  justify-content: center;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 24px;
+}
+
+.button-session {
+  border-radius: 5px;
+  text-align: center;
+  height: 40px;
+  color: #FFF;
+  background-color: #34bf49;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.button-session:hover {
+  background: #5fd370 !important;
+}
+
+.login-link {
+  color: #000;
+}
+
+.login-link:hover, .session-brand:hover {
+  color: #0099e5 !important;
+}
+
+.demo-user {
+  border-radius: 5px;
+  text-align: center;
+  height: 40px;
+  color: #FFF !important;
+  border: 1px solid #0099e5;
+  background: #0099e5 !important;
+  width: 100%;
+  cursor: pointer;
+  text-shadow: none !important;
+}
+
+.demo-user:hover {
+  background: #00aaff !important;
+}
+
+.session-signup-button {
+  background: #34bf49 !important;
+  color: #FFF !important;
+  text-shadow: none !important;
+  height: 54px;
+  position: relative;
+  top: -1px;
+}
+
+.signup-btn-link {
+  border: 1px solid #34bf49;
+  background: #34bf49;
+  color: #FFF !important;
+  position: relative;
+  height: 50px;
+  top: -1px;
+}
+
+.signup-btn-link:hover {
+  border: 1px solid #5fd370 !important;
+  background: #5fd370 !important;
+}
+
+#signup-btn-text {
+  color: #FFF !important;
+}

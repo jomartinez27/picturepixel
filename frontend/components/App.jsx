@@ -4,8 +4,9 @@ import Home from './home/Home';
 import Signup from './session/signup_form_container';
 import Login from './session/login_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import PhotoContainer from './photos/photoContainer';
-import UserContainer from './users/users';
+import PhotoContainer from './photo/photo_container';
+import UserPhoto from './photo/user_photo';
+import UserContainer from './users/user_container';
 
 const App = () => (
   <div>

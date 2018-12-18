@@ -1,0 +1,65 @@
+.home-splash {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("blacksky.jpg");
+  background-size: cover;
+}
+
+.home-brand {
+  font-style: none !important;
+  color: #FFF;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.home-brand:hover {
+  color: #0099e5 !important;
+  text-shadow: none !important;
+}
+
+.home-nav {
+  background: transparent !important;
+  border: none !important;
+}
+
+.demo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10em;
+  margin-bottom: 10em;
+}
+
+.jumbo-home {
+  background-color: transparent !important;
+  text-align: center;
+}
+
+.demo-tag, .demo-text {
+  color: #FFF;
+}
+
+.home-button {
+  background: #0099e5 !important;
+  color: #FFF !important;
+  border-color: #0099e5 !important;
+  border-radius: 100px !important;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.home-button:hover {
+  background: #00aaff !important;
+  border-color: #00aaff !important;
+}
+
+.home-login {
+  background: transparent !important;
+  color: #FFF !important;
+  border-color: transparent !important;
+}
+
+.home-login:hover {
+  color: #0099e5 !important;
+  text-shadow: none !important;
+}
