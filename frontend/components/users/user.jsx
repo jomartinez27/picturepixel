@@ -10,18 +10,20 @@ class User extends React.Component {
     super(props);
 
     this.state = {
-      show: false
+      show: false,
+      target: "",
+      title: ""
     }
     this.handleClose = this.handleClose.bind(this);
     this.handleShow = this.handleShow.bind(this);
   }
 
-  handleClose() {
-    this.setState({show: false})
+  handleClose(e) {
+    this.setState({show: false, target: "", title: ""})
   }
 
-  handleShow() {
-    this.setState({show: true})
+  handleShow(e) {
+    this.setState({show: true, target: e.target, title: e.target.title})
   }
 
   componentDidMount() {
@@ -87,68 +89,22 @@ class User extends React.Component {
             {this.props.photos.map(photo => photo.photographer_id === parseInt(this.props.match.params.userId) ?
               <li key={photo.id}>
                 <div className="single-photo-container">
-                  <Image key={photo.id} responsive src={photo.photoUrl} style={{width: 300, height: 300}} onClick={this.handleShow}/>
+                  <Image key={photo.id} responsive src={photo.photoUrl} style={{width: 300, height: 300}} onClick={this.handleShow} title={photo.title}/>
                 </div>
-
-                <Modal show={this.state.show}>
-                  <Modal.Header closeButton>
-                    <Modal.Title>{photo.title}</Modal.Title>
-                  </Modal.Header>
-                </Modal>
               </li>
               : null)}
           </div>
+          <Modal show={this.state.show} onHide={this.handleClose}>
+            <Modal.Header closeButton>
+              <Modal.Title>{this.state.title}</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <Image src={this.state.target.src} responsive/>
+            </Modal.Body>
+          </Modal>
       </div>
     )
   }
 }
 
 export default User;
-
-// <div className="profile">
-//   <div className="user-nav-container">
-//     <UserNav />
-//   </div>
-//   <div className="profile-body">
-//     <div className="profile-photos">
-//       <div className="grid-container">
-//   {this.props.photos.map(photo => photo.photographer_id === parseInt(this.props.match.params.userId) ?
-//     <li
-//       className="photo-list photo-list-prof"
-//       key={photo.id}>
-//       <div className="outer-photo-container">
-//       <div className="photo-header">
-//         <div className="photo-profile-logo">
-//           <i className="material-icons profile-drop">account_circle</i>
-//           <p className="photo-username">{this.props.user.username}</p>
-//         </div>
-//       </div>
-//       <div className="single-photo-container"><img key={photo.id} className="photo user-photo-prof" src={photo.photoUrl}/></div>
-//       <div className="photo-footer">
-//         <p className="photo-title">{photo.title}</p>
-//         <div className="photo-description">{photo.description}</div>
-//       </div>
-//       <div id="delete-modal" className="delete-modal">
-//         <div className="delete-modal-content">
-//         <h3>Are you sure you want to delete?</h3>
-//           <div className="delete-buttons">
-//             <button className="confirm-yes" onClick={() => this.props.deletePhoto(photo.id)}>Yes</button>
-//             <button className="confirm-no" onClick={this.removeModal()}>No</button>
-//             </div>
-//           </div>
-//         </div>
-//       { photo.photographer_id === this.props.currentUser.id ? <div className="delete-container">
-//         <div><button className="delete-btn" onClick={this.displayModal()}>
-//           <div className="delete-txt">Delete</div>
-//           <i className="material-icons delete-icon">delete_outline</i>
-//         </button>
-//       </div>
-//
-//       </div> : null }
-//     </div>
-//       </li>
-//      : null)}
-//    </div>
-//  </div>
-//  </div>
-// </div>
