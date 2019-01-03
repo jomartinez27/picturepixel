@@ -42,8 +42,32 @@ class Photo extends React.Component {
     }
   }
 
+  displayPhoto() {
+    return (
+      this.state.photos.map(photo => <li key={photo.id}>
+        <div className="container photo-container">
+          <div className="photo-header">
+            <div className="photo-profile-logo">
+              <i className="material-icons profile-drop">account_circle</i>
+              <Link className="user-link" to={`/users/${this.props.users[photo.photographer_id].id}`}>
+                <p className="photo-username">{this.props.users[photo.photographer_id].username}</p>
+              </Link>
+            </div>
+          </div>
+          <Link to={`/users/${this.props.users[photo.photographer_id].id}`}>
+            <Image src={photo.photoUrl} responsive />
+          </Link>
+          <div className="photo-footer">
+            <p className="photo-title">{photo.title}</p>
+            {photo.description}
+          </div>
+        </div>
+      </li>)
+    )
+  }
+
   render () {
-    if (!this.props.users) {
+    if (!this.props.users || !this.state.photos) {
       return null;
     }
     return (
@@ -54,25 +78,7 @@ class Photo extends React.Component {
         <Grid className="photo-index-container">
           <Row>
             <Col xs={12} className="phot-index-row">
-              {this.state.photos.map(photo => <li key={photo.id}>
-                <div className="container photo-container">
-                  <div className="photo-header">
-                    <div className="photo-profile-logo">
-                      <i className="material-icons profile-drop">account_circle</i>
-                      <Link className="user-link" to={`/users/${this.props.users[photo.photographer_id].id}`}>
-                        <p className="photo-username">{this.props.users[photo.photographer_id].username}</p>
-                      </Link>
-                    </div>
-                  </div>
-                  <Link to={`/users/${this.props.users[photo.photographer_id].id}`}>
-                    <Image src={photo.photoUrl} responsive />
-                  </Link>
-                  <div className="photo-footer">
-                    <p className="photo-title">{photo.title}</p>
-                    {photo.description}
-                  </div>
-                </div>
-              </li>)}
+              {this.displayPhoto()}
             </Col>
           </Row>
         </Grid>
@@ -84,43 +90,3 @@ class Photo extends React.Component {
 
 
 export default withRouter(Photo);
-
-// <div className="flow-photo">
-// <ul className="ul-photo-list">
-// <div className="photo-container">
-// {this.state.photos.map(photo => <li
-// className="photo-list"
-// key={photo.id}>
-// <div className="photo-header">
-//   <div className="photo-profile-logo">
-//     <i className="material-icons profile-drop">account_circle</i>
-//     <Link className="user-link" to={`/users/${this.props.users[photo.photographer_id].id}`}>
-//       <p className="photo-username">{this.props.users[photo.photographer_id].username}</p>
-//     </Link>
-//   </div>
-// </div>
-// <div className="single-photo-container"><img key={photo.id} className="photo" src={photo.photoUrl}/></div>
-// <div className="photo-footer">
-//   <p className="photo-title">{photo.title}</p>
-//   {photo.description}
-// </div>
-// <div id="delete-modal" className="delete-modal">
-//   <div className="delete-modal-content">
-//     <h3>Are you sure you want to delete?</h3>
-//     <div className="delete-buttons">
-//     <button className="confirm-yes" onClick={() => this.props.deletePhoto(photo.id)}>Yes</button>
-//     <button className="confirm-no" onClick={this.removeModal()}>No</button>
-//     </div>
-//   </div>
-// </div>
-// { photo.photographer_id === this.props.currentUser.id ? <div className="delete-container">
-//   <div><button className="delete-btn" onClick={this.displayModal()}>
-//     <div className="delete-txt">Delete</div>
-//     <i className="material-icons delete-icon">delete_outline</i>
-//   </button>
-// </div>
-// </div> : null }
-// </li>)}
-// </div>
-// </ul>
-// </div>

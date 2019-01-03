@@ -5,6 +5,9 @@ import PhotoFormContainer from "../photo/photo_form_container";
 
 class UserNav extends React.Component {
   render () {
+    if (!this.props.user) {
+      return null;
+    }
     return (
       <div className="navbar-container">
         <PersistLogoContainer />

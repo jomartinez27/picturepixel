@@ -2,6 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import UserNav from './user_nav_container';
 import EditFormContainer from '../photo/edit_photo_container';
+import {Grid, Row, Col} from 'react-bootstrap';
 
 
 class User extends React.Component {
@@ -74,52 +75,14 @@ class User extends React.Component {
     }
 
     return (
-      <div className="profile">
-        <div className="user-nav-container">
-          <UserNav />
-        </div>
-        <div className="profile-body">
-          <div className="profile-photos">
-            <div className="grid-container">
-        {this.props.photos.map(photo => photo.photographer_id === parseInt(this.props.match.params.userId) ?
-          <li
-            className="photo-list photo-list-prof"
-            key={photo.id}>
-            <div className="outer-photo-container">
-            <div className="photo-header">
-              <div className="photo-profile-logo">
-                <i className="material-icons profile-drop">account_circle</i>
-                <p className="photo-username">{this.props.user.username}</p>
-              </div>
-            </div>
-            <div className="single-photo-container"><img key={photo.id} className="photo user-photo-prof" src={photo.photoUrl}/></div>
-            <div className="photo-footer">
-              <p className="photo-title">{photo.title}</p>
-              <div className="photo-description">{photo.description}</div>
-            </div>
-            <div id="delete-modal" className="delete-modal">
-              <div className="delete-modal-content">
-              <h3>Are you sure you want to delete?</h3>
-                <div className="delete-buttons">
-                  <button className="confirm-yes" onClick={() => this.props.deletePhoto(photo.id)}>Yes</button>
-                  <button className="confirm-no" onClick={this.removeModal()}>No</button>
-                  </div>
-                </div>
-              </div>
-            { photo.photographer_id === this.props.currentUser.id ? <div className="delete-container">
-              <div><button className="delete-btn" onClick={this.displayModal()}>
-                <div className="delete-txt">Delete</div>
-                <i className="material-icons delete-icon">delete_outline</i>
-              </button>
-            </div>
-
-            </div> : null }
-          </div>
-            </li>
-           : null)}
-         </div>
-       </div>
-       </div>
+      <div>
+        <div className="user-nav-container"><UserNav /></div>
+        <Grid>
+          <Row>
+            <Col xs={6}>
+            </Col>
+          </Row>
+        </Grid>
       </div>
     )
   }
@@ -127,14 +90,6 @@ class User extends React.Component {
 
 export default User;
 
-
-
-
-
-
-
-
-//
 // <div className="profile">
 //   <div className="user-nav-container">
 //     <UserNav />
@@ -144,27 +99,38 @@ export default User;
 //       <div className="grid-container">
 //   {this.props.photos.map(photo => photo.photographer_id === parseInt(this.props.match.params.userId) ?
 //     <li
-//       className="photo-list"
+//       className="photo-list photo-list-prof"
 //       key={photo.id}>
+//       <div className="outer-photo-container">
 //       <div className="photo-header">
 //         <div className="photo-profile-logo">
 //           <i className="material-icons profile-drop">account_circle</i>
 //           <p className="photo-username">{this.props.user.username}</p>
 //         </div>
 //       </div>
-//       <div className="single-photo-container"><img key={photo.id} className="photo" src={photo.photoUrl}/></div>
+//       <div className="single-photo-container"><img key={photo.id} className="photo user-photo-prof" src={photo.photoUrl}/></div>
 //       <div className="photo-footer">
 //         <p className="photo-title">{photo.title}</p>
 //         <div className="photo-description">{photo.description}</div>
 //       </div>
+//       <div id="delete-modal" className="delete-modal">
+//         <div className="delete-modal-content">
+//         <h3>Are you sure you want to delete?</h3>
+//           <div className="delete-buttons">
+//             <button className="confirm-yes" onClick={() => this.props.deletePhoto(photo.id)}>Yes</button>
+//             <button className="confirm-no" onClick={this.removeModal()}>No</button>
+//             </div>
+//           </div>
+//         </div>
 //       { photo.photographer_id === this.props.currentUser.id ? <div className="delete-container">
-//         <div><button className="delete-btn" onClick={() => this.props.deletePhoto(photo.id)}>
+//         <div><button className="delete-btn" onClick={this.displayModal()}>
 //           <div className="delete-txt">Delete</div>
 //           <i className="material-icons delete-icon">delete_outline</i>
 //         </button>
 //       </div>
 //
 //       </div> : null }
+//     </div>
 //       </li>
 //      : null)}
 //    </div>
