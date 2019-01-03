@@ -2,21 +2,27 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import UserNav from './user_nav_container';
 import EditFormContainer from '../photo/edit_photo_container';
-import { Grid, Row, Col, Image, Jumbotron } from 'react-bootstrap';
+import { Modal, Image, Jumbotron } from 'react-bootstrap';
 
 
 class User extends React.Component {
   constructor(props) {
     super(props);
 
-    this.props.photos.map(photo => (
-      this.state = {
-        title: photo.title,
-        description: photo.description
-      }
-    ))
+    this.state = {
+      show: false
+    }
+    this.handleClose = this.handleClose.bind(this);
+    this.handleShow = this.handleShow.bind(this);
   }
 
+  handleClose() {
+    this.setState({show: false})
+  }
+
+  handleShow() {
+    this.setState({show: true})
+  }
 
   componentDidMount() {
     this.props.fetchUser(this.props.match.params.userId)
@@ -81,8 +87,14 @@ class User extends React.Component {
             {this.props.photos.map(photo => photo.photographer_id === parseInt(this.props.match.params.userId) ?
               <li key={photo.id}>
                 <div className="single-photo-container">
-                  <Image key={photo.id} responsive src={photo.photoUrl} style={{width: 300, height: 300}}/>
+                  <Image key={photo.id} responsive src={photo.photoUrl} style={{width: 300, height: 300}} onClick={this.handleShow}/>
                 </div>
+
+                <Modal show={this.state.show}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>{photo.title}</Modal.Title>
+                  </Modal.Header>
+                </Modal>
               </li>
               : null)}
           </div>

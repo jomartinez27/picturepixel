@@ -28,20 +28,6 @@ class Photo extends React.Component {
     }
   }
 
-  displayModal() {
-    return () => {
-      const modal = document.getElementById("delete-modal")
-      modal.style.display = "block"
-    }
-  }
-
-  removeModal() {
-    return () => {
-      const modal = document.getElementById("delete-modal");
-      modal.style.display = "none"
-    }
-  }
-
   displayPhoto() {
     return (
       this.state.photos.map(photo => <li key={photo.id}>
