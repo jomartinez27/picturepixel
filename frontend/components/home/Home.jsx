@@ -6,6 +6,7 @@ class Home extends React.Component {
   render () {
     return (
       <div className="home-splash">
+        <Image src={window.images.la} responsive className="home-splash"/>
         <Navbar inverse collapseOnSelect className="home-nav">
           <Navbar.Header>
             <Navbar.Brand>
