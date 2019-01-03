@@ -1,46 +1,47 @@
 import React from 'react';
-import { FieldGroup,
-  FormGroup,
-  ControlLabel,
-  FormControl,
-  Checkbox,
-  Radio,
-  Button,
-  HelpBlock,
-  Grid,
-  Row,
-  Col
-} from 'react-bootstrap';
-import CustomNav from './nav.jsx';
-import {withRouter} from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+import DemoUserContainer from '../demo_user/demo_user_container';
+import Greeting from '../greeting/greeting';
+import {Grid, Row, Col} from 'react-bootstrap';
 
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       username: "",
       email: "",
       password: ""
-    }
+    };
 
-    this.handleChange = this.handleChange.bind(this);
+
+    this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.demoUser = this.demoUser.bind(this);
   }
 
   componentWillUnmount() {
     this.props.deleteErrors();
   }
 
-  getValidateState() {
-    const length = this.state.password.length;
-    if (length >= 6) return 'success';
-    if (length < 6) return 'warning';
+  update(field) {
+    return e => {
+      this.setState({[field]: e.target.value})
+    }
   }
 
-  handleChange() {
-    this.setState()
+  emailForm() {
+    if (this.props.formType === 'signup') {
+      return (
+        <label className="username-email">Email
+          <input className="signup_input"
+            type="text"
+            value={this.state.email}
+            onChange={this.update('email')}
+            placeholder='email'
+            required
+            />
+        </label>
+      )
+    }
   }
 
   handleSubmit(e) {
@@ -49,103 +50,90 @@ class SessionForm extends React.Component {
     this.props.processForm(user);
   }
 
-  demoUser(e) {
-    e.preventDefault();
-    const demoUser = Object.assign({}, {username: 'demo', password: 'password123'})
-    this.props.login(demoUser);
+  formTypeHeader() {
+    if (this.props.formType === 'signup') {
+      return (
+        <div>
+          <header className="signup-header">Join PixelPx</header>
+        </div>
+      )
+    } else {
+      return (
+        <div>
+          <header className="login-header">Log In to PixelPx</header>
+        </div>
+      )
+    }
+  }
+
+  formTypeButton() {
+    if (this.props.formType === 'signup') {
+      return (
+        <input type="submit" className="button-session" value="Sign Up"/>
+      )
+    } else {
+      return (
+        <input type="submit" className="button-session" value="Log in"/>
+      )
+    }
+  }
+
+  renderErrors() {
+    return (
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
   }
 
   render () {
-    let head;
-    if (this.props.formType === "signup") {
-      head = "Signup"
-    } else {
-      head = "Login"
-    }
+    return (
+      <div className="session-form-outer">
+        <Greeting location={this.props.location} />
+        <div className="full-page-session">
+        <div className="session-errors">{this.renderErrors()}</div>
+        <div className="session-form-container">
+          <div className="form-type-header">{this.formTypeHeader()}</div>
+          <div className="session-form-input">
+            <form onSubmit={this.handleSubmit} className="form-container">
 
-    function FieldGroup({ id, label, help, ...props }) {
-  return (
-    <FormGroup controlId={id}>
-      <ControlLabel>{label}</ControlLabel>
-      {help && <HelpBlock>{help}</HelpBlock>}
-      <FormControl {...props} />
-    </FormGroup>
-  );
-}
+            <label className="username-email">Username
+              <input
+                autoFocus
+                className="signup-input"
+                type="text"
+                value={this.state.username}
+                onChange={this.update('username')}
+                placeholder="username"
+                required
+                />
+            </label>
 
-const formInstance = (
-  <form onSubmit={this.handleSubmit}>
-    <ControlLabel className="session-label">{head}</ControlLabel>
-    <FieldGroup
-      id="formControlsText"
-      type="text"
-      placeholder="I am a user"
-      help="Username"
-    />
-    <FieldGroup
-      id="formControlsEmail"
-      type="email"
-      placeholder="Email"
-      help="Email"
-    />
-  <FieldGroup
-    id="formControlsPassword"
-    type="password"
-    help="Password"
-    placeholder="6 or more characters"
-    />
-  <input type="submit" className="button-session" value="Sign Up"/>
-  <Button onClick={this.demoUser} className="demo-user">Demo User</Button>
-  </form>
-);
+            {this.emailForm()}
 
-const loginInstance = (
-  <form onSubmit={this.handleSubmit}>
-    <ControlLabel className="session-label">{head}</ControlLabel>
-    <FieldGroup
-      id="formControlsText"
-      type="text"
-      placeholder="I am a user"
-      help="Username"
-    />
-  <FieldGroup
-    id="formControlsPassword"
-    type="password"
-    help="Password"
-    placeholder="6 or more characters"
-    />
-  <input type="submit" className="button-session" value="Log in"/>
-  <Button onClick={this.demoUser} className="demo-user">Demo User</Button>
-  </form>
-)
+            <label className="username-email">Password
+              <input
+                className="signup-input"
+                type="password"
+                value={this.state.password}
+                onChange={this.update('password')}
+                placeholder="6 or more characters"
+                required
+                />
+            </label>
 
-  if (this.props.location.pathname === "/signup") {
-      return (
-        <div className="session-page">
-          <CustomNav />
-          <Grid className="session-container">
-            <Row>
-              <Col xs={12}>
-                {formInstance}
-              </Col>
-            </Row>
-          </Grid>
+            {this.formTypeButton()}
+            <DemoUserContainer />
+            </form>
+          </div>
         </div>
-      )
-    } else if (this.props.location.pathname === "/login") {
-      return (
-        <div className="session-page">
-          <CustomNav />
-          <Grid className="session-container">
-            <Row>
-              <Col xs={12}>
-                {loginInstance}
-              </Col>
-            </Row>
-          </Grid>
-        </div>
-      )
-    }
+      </div>
+      </div>
+    )
   }
 }
 

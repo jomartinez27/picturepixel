@@ -6,10 +6,10 @@
   "name": "five_hundred_px_clone",
   "private": true,
   "dependencies": {
-    "@babel/core": "^7.2.2",
-    "@babel/preset-env": "^7.2.0",
-    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
     "lodash": "^4.17.10",
     "normalize.css": "^8.0.0",
     "react": "^16.4.2",

@@ -1,93 +1,89 @@
-.session-page {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(#f7f8fa, #f7f8fa);
-  background-size: cover;
+.full-page-session {
+  background-color: #f7f8fa;
 }
 
-.form-group {
-  margin: 2px !important;
+.session-form-outer {
+  background-color: #eee;
 }
 
-.session-container {
-  border: 1px solid;
-  width: 400px !important;
-  padding: 40px;
-  height: 500px;
-  margin-top: 6em;
-  background: #FFF;
-}
-
-.session-label {
+.session-form-container {
   display: flex;
-  justify-content: center;
-  font-family: 'Press Start 2P', cursive;
+  flex-direction: column;
+  border: 1px solid #000;;
+  margin: 75px auto;
+  width: 400px;
+  padding: 10px;
+}
+
+.form-type-header {
+  display: block;
   font-size: 24px;
+  margin: 20px 74px;
+  font-family: 'Press Start 2P', cursive;
+  color: #525558;
+  text-align: center;
+}
+
+.session-form-container {
+  display: flex;
+  background-color: #FFF;
+}
+
+.session-form-input {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 24px;
+}
+
+form label {
+  color: #71767a;
+}
+
+form label input {
+  height: 37px;
+  padding-left: 6px;
+}
+
+input {
+  width: 100%;
 }
 
 .button-session {
   border-radius: 5px;
   text-align: center;
+  width: 316px;
   height: 40px;
   color: #FFF;
   background-color: #34bf49;
   margin: 20px 0;
-  width: 100%;
+  width: 358px;
 }
 
 .button-session:hover {
-  background: #5fd370 !important;
-}
-
-.login-link {
-  color: #000;
-}
-
-.login-link:hover, .session-brand:hover {
-  color: #0099e5 !important;
-}
-
-.demo-user {
-  border-radius: 5px;
-  text-align: center;
-  height: 40px;
-  color: #FFF !important;
-  border: 1px solid #0099e5;
-  background: #0099e5 !important;
-  width: 100%;
   cursor: pointer;
-  text-shadow: none !important;
+  background-color: #5fd370;
 }
 
-.demo-user:hover {
-  background: #00aaff !important;
+input:focus {
+  border-color: #0099e5;
 }
 
-.session-signup-button {
-  background: #34bf49 !important;
-  color: #FFF !important;
-  text-shadow: none !important;
-  height: 54px;
-  position: relative;
-  top: -1px;
+.session-errors {
+  color: #ff4c4c;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
-.signup-btn-link {
-  border: 1px solid #34bf49;
-  background: #34bf49;
-  color: #FFF !important;
-  position: relative;
-  height: 50px;
-  top: -1px;
+.username-email {
+  display: block;
+  height: 100px;
 }
 
-.signup-btn-link:hover {
-  border: 1px solid #5fd370 !important;
-  background: #5fd370 !important;
+html {
+  background-color: #f7f8fa;
 }
 
-#signup-btn-text {
-  color: #FFF !important;
+ul, li {
+  list-style: none !important;
 }
