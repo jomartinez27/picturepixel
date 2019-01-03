@@ -2,7 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import UserNav from './user_nav_container';
 import EditFormContainer from '../photo/edit_photo_container';
-import { Modal, Image, Jumbotron } from 'react-bootstrap';
+import { Modal, Image, Jumbotron, Button } from 'react-bootstrap';
 
 
 class User extends React.Component {
@@ -12,18 +12,24 @@ class User extends React.Component {
     this.state = {
       show: false,
       target: "",
-      title: ""
+      title: "",
+      show2: false
     }
     this.handleClose = this.handleClose.bind(this);
     this.handleShow = this.handleShow.bind(this);
+    this.handleShow2 = this.handleShow2.bind(this);
   }
 
   handleClose(e) {
-    this.setState({show: false, target: "", title: ""})
+    this.setState({show: false, target: "", title: "", show2:false})
   }
 
   handleShow(e) {
     this.setState({show: true, target: e.target, title: e.target.title})
+  }
+
+  handleShow2() {
+    this.setState({show2: true})
   }
 
   componentDidMount() {
@@ -38,28 +44,9 @@ class User extends React.Component {
     }
   }
 
-  update(field) {
-    return e => {
-      this.setState({[field]: e.target.value})
-    }
-  }
-
-  handleUpdate() {
-    return (
-      <div className="edit-form-container">
-        <form className="edit-form" onSubmit={this.handleSubmit}>
-          <label className="photo-form-title"><h3>Title</h3>
-          <input className="photo-input"
-            type="text" value={this.props.photos[this.props.match.params.userId]}
-            onChange={this.update('title')}/>
-          </label>
-        </form>
-      </div>
-    )
-  }
-
-  displayModal() {
+    displayModal() {
     return () => {
+      this.setState({show: false})
       const modal = document.getElementById("delete-modal")
       modal.style.display = "block"
     }
@@ -71,7 +58,6 @@ class User extends React.Component {
       modal.style.display = "none"
     }
   }
-
 
   render () {
     if (this.props.photos.length === 0) {
@@ -89,18 +75,34 @@ class User extends React.Component {
             {this.props.photos.map(photo => photo.photographer_id === parseInt(this.props.match.params.userId) ?
               <li key={photo.id}>
                 <div className="single-photo-container">
-                  <Image key={photo.id} responsive src={photo.photoUrl} style={{width: 300, height: 300}} onClick={this.handleShow} title={photo.title}/>
+                  <Image responsive src={photo.photoUrl}
+                    style={{width: 300, height: 300}}
+                    onClick={this.handleShow}
+                    title={photo.title}
+                    />
                 </div>
+                <div id="delete-modal" className="delete-modal">
+                  <div className="delete-modal-content">
+                  <h3>Are you sure you want to delete?</h3>
+                    <div className="delete-buttons">
+                      <button className="confirm-yes" onClick={() => this.props.deletePhoto(photo.id)}>Yes</button>
+                      <button className="confirm-no" onClick={this.removeModal()}>No</button>
+                      </div>
+                    </div>
+                  </div>
               </li>
               : null)}
           </div>
           <Modal show={this.state.show} onHide={this.handleClose}>
             <Modal.Header closeButton>
-              <Modal.Title>{this.state.title}</Modal.Title>
+              <Modal.Title style={{textAlign: 'center'}}>{this.state.title}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
               <Image src={this.state.target.src} responsive/>
             </Modal.Body>
+            <Modal.Footer>
+              <Button onClick={this.displayModal()}>Delete</Button>
+            </Modal.Footer>
           </Modal>
       </div>
     )
