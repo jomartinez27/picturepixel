@@ -64,8 +64,8 @@
 
 .photo-list {
   border: 1px solid #71767a;
+  margin: 70px 6px 0px;
   background-color: #FFF;
-  max-height: fit-content;
 }
 
 .photo-profile-logo {
@@ -81,8 +81,19 @@
   max-width: 1000px;
 }
 
+.user-photo-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  position: relative;
+  top: 50px;
+  padding: 20px;
+  background: #f7f8fa;
+}
+
 .single-photo-container {
-  max-width: 500px;
+  margin: 4px;
 }
 
 .delete-container {
@@ -141,5 +152,5 @@
 }
 
 .photo-list-prof {
-  margin: 36px 16px 0px;
+  margin: 36px 6px 0px;
 }
