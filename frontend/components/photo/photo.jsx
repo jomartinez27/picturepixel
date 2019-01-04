@@ -5,6 +5,7 @@ import NavBar from '../greeting/nav_bar';
 import { withRouter, Link } from 'react-router-dom'
 import EditPhotoContainer from './edit_photo_container';
 import { Grid, Row, Col, Image, Navbar, Nav, NavItem } from 'react-bootstrap';
+import { TimelineMax } from 'gsap/all';
 
 class Photo extends React.Component {
   constructor(props) {
@@ -20,6 +21,8 @@ class Photo extends React.Component {
   componentDidMount() {
     this.props.fetchPhotos()
     this.props.fetchUsers()
+    let tl = new TimelineMax();
+    tl.from('.photo-index-container', 3, {opacity:0, scale:1})
   }
 
   componentWillReceiveProps(newProps){
@@ -29,6 +32,9 @@ class Photo extends React.Component {
   }
 
   displayPhoto() {
+    if (!this.props.users) {
+      return null;
+    }
     return (
       this.state.photos.map(photo => <li key={photo.id}>
         <div className="container photo-container">
@@ -41,7 +47,7 @@ class Photo extends React.Component {
             </div>
           </div>
           <Link to={`/users/${this.props.users[photo.photographer_id].id}`}>
-            <Image src={photo.photoUrl} responsive />
+            <Image src={photo.photoUrl} responsive className="photo-index"/>
           </Link>
           <div className="photo-footer">
             <p className="photo-title">{photo.title}</p>
