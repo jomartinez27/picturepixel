@@ -3,6 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import DemoUserContainer from '../demo_user/demo_user_container';
 import Greeting from '../greeting/greeting';
 import {Grid, Row, Col} from 'react-bootstrap';
+import { TimelineMax } from 'gsap/all';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -16,6 +17,11 @@ class SessionForm extends React.Component {
 
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount(){
+    let tl = new TimelineMax();
+    tl.from(['.form-container', '.session-form-container'], 2, {opacity:0, y:200})
   }
 
   componentWillUnmount() {
