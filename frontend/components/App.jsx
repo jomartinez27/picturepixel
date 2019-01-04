@@ -5,7 +5,6 @@ import Signup from './session/signup_form_container';
 import Login from './session/login_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import PhotoContainer from './photo/photo_container';
-import UserPhoto from './photo/user_photo';
 import UserContainer from './users/user_container';
 
 const App = () => (

@@ -13,7 +13,7 @@ class User extends React.Component {
       show: false,
       target: "",
       title: "",
-      show2: false
+      show2: false,
     }
     this.handleClose = this.handleClose.bind(this);
     this.handleShow = this.handleShow.bind(this);
@@ -21,6 +21,7 @@ class User extends React.Component {
   }
 
   handleClose(e) {
+    console.log(this.state.target.id)
     this.setState({show: false, target: "", title: "", show2:false})
   }
 
@@ -79,14 +80,15 @@ class User extends React.Component {
                     style={{width: 300, height: 300}}
                     onClick={this.handleShow}
                     title={photo.title}
+                    id={photo.photographer_id}
                     />
                 </div>
-                <div id="delete-modal" className="delete-modal">
-                  <div className="delete-modal-content">
-                  <h3>Are you sure you want to delete?</h3>
-                    <div className="delete-buttons">
-                      <button className="confirm-yes" onClick={() => this.props.deletePhoto(photo.id)}>Yes</button>
-                      <button className="confirm-no" onClick={this.removeModal()}>No</button>
+                  <div id="delete-modal" className="delete-modal">
+                    <div className="delete-modal-content">
+                      <h3>Are you sure you want to delete?</h3>
+                      <div className="delete-buttons">
+                        <button className="confirm-yes" onClick={() => this.props.deletePhoto(photo.id)}>Yes</button>
+                        <button className="confirm-no" onClick={this.removeModal()}>No</button>
                       </div>
                     </div>
                   </div>
@@ -101,7 +103,9 @@ class User extends React.Component {
               <Image src={this.state.target.src} responsive/>
             </Modal.Body>
             <Modal.Footer>
-              <Button onClick={this.displayModal()}>Delete</Button>
+              {parseInt(this.state.target.id) === this.props.currentUser.id ?
+                <Button onClick={this.displayModal()}>Delete</Button> : null
+              }
             </Modal.Footer>
           </Modal>
       </div>
