@@ -16,13 +16,19 @@ class User extends React.Component {
       show2: false,
     }
     this.handleClose = this.handleClose.bind(this);
+    this.handleClose2 = this.handleClose2.bind(this);
     this.handleShow = this.handleShow.bind(this);
     this.handleShow2 = this.handleShow2.bind(this);
+    this.deletePhoto = this.deletePhoto.bind(this)
   }
 
-  handleClose(e) {
-    console.log(this.state.target.id)
+  handleClose() {
+    console.log(parseInt(this.state.target.accessKey) === 8);
     this.setState({show: false, target: "", title: "", show2:false})
+  }
+
+  handleClose2() {
+    this.setState({show2:false})
   }
 
   handleShow(e) {
@@ -53,6 +59,12 @@ class User extends React.Component {
     }
   }
 
+  deletePhoto() {
+    return this.props.deletePhoto(parseInt(this.state.target.accessKey)).then(() => {
+      this.handleClose()
+    })
+  }
+
   removeModal() {
     return () => {
       const modal = document.getElementById("delete-modal");
@@ -81,17 +93,9 @@ class User extends React.Component {
                     onClick={this.handleShow}
                     title={photo.title}
                     id={photo.photographer_id}
+                    accessKey={photo.id}
                     />
                 </div>
-                  <div id="delete-modal" className="delete-modal">
-                    <div className="delete-modal-content">
-                      <h3>Are you sure you want to delete?</h3>
-                      <div className="delete-buttons">
-                        <button className="confirm-yes" onClick={() => this.props.deletePhoto(photo.id)}>Yes</button>
-                        <button className="confirm-no" onClick={this.removeModal()}>No</button>
-                      </div>
-                    </div>
-                  </div>
               </li>
               : null)}
           </div>
@@ -104,9 +108,17 @@ class User extends React.Component {
             </Modal.Body>
             <Modal.Footer>
               {parseInt(this.state.target.id) === this.props.currentUser.id ?
-                <Button onClick={this.displayModal()}>Delete</Button> : null
+                <Button onClick={this.handleShow2}>Delete</Button> : null
               }
             </Modal.Footer>
+          </Modal>
+          <Modal show={this.state.show2} onHide={this.handleClose2}>
+            <Modal.Header closeButton>
+              <Modal.Title>Are you sure you want to delete?</Modal.Title>
+              <Modal.Body>
+                <Button onClick={this.deletePhoto}>Yes</Button>
+              </Modal.Body>
+            </Modal.Header>
           </Modal>
       </div>
     )
