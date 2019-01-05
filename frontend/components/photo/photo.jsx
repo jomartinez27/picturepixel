@@ -21,8 +21,6 @@ class Photo extends React.Component {
   componentDidMount() {
     this.props.fetchPhotos()
     this.props.fetchUsers()
-    let tl = new TimelineMax();
-    tl.from('.photo-index-container', 3, {opacity:0, scale:1})
   }
 
   componentWillReceiveProps(newProps){

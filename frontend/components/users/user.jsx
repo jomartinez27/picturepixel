@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import UserNav from './user_nav_container';
 import EditFormContainer from '../photo/edit_photo_container';
 import { Modal, Image, Jumbotron, Button } from 'react-bootstrap';
+import { TimelineMax } from 'gsap/all';
 
 
 class User extends React.Component {
@@ -50,25 +51,10 @@ class User extends React.Component {
     }
   }
 
-    displayModal() {
-    return () => {
-      this.setState({show: false})
-      const modal = document.getElementById("delete-modal")
-      modal.style.display = "block"
-    }
-  }
-
   deletePhoto() {
     return this.props.deletePhoto(parseInt(this.state.target.accessKey)).then(() => {
       this.handleClose()
     })
-  }
-
-  removeModal() {
-    return () => {
-      const modal = document.getElementById("delete-modal");
-      modal.style.display = "none"
-    }
   }
 
   render () {
@@ -85,7 +71,7 @@ class User extends React.Component {
         <div><UserNav /></div>
           <div className="user-photo-container">
             {this.props.photos.map(photo => photo.photographer_id === parseInt(this.props.match.params.userId) ?
-              <li key={photo.id}>
+              <li key={photo.id} className="user-photo">
                 <div className="single-photo-container">
                   <Image responsive src={photo.photoUrl}
                     style={{width: 300, height: 300}}
