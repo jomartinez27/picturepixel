@@ -23,7 +23,6 @@ class User extends React.Component {
   }
 
   handleClose() {
-    console.log(parseInt(this.state.target.accessKey) === 8);
     this.setState({show: false, target: "", title: "", show2:false})
   }
 
@@ -108,7 +107,7 @@ class User extends React.Component {
             </Modal.Body>
             <Modal.Footer>
               {parseInt(this.state.target.id) === this.props.currentUser.id ?
-                <Button onClick={this.handleShow2}>Delete</Button> : null
+                <Button onClick={this.handleShow2} bsStyle="danger">Delete</Button> : null
               }
             </Modal.Footer>
           </Modal>
@@ -116,7 +115,10 @@ class User extends React.Component {
             <Modal.Header closeButton>
               <Modal.Title>Are you sure you want to delete?</Modal.Title>
               <Modal.Body>
-                <Button onClick={this.deletePhoto}>Yes</Button>
+                <Button onClick={this.deletePhoto} bsStyle="danger">Yes</Button>
+                &nbsp;
+                &nbsp;
+                <Button onClick={this.handleClose2} bsStyle="success">No</Button>
               </Modal.Body>
             </Modal.Header>
           </Modal>
